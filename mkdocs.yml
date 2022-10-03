@@ -1,5 +1,6 @@
 docs_dir: content
 site_name: შესავალი ციფრულ ტექნოლოგიებში
+site_url: https://freeuni-digital-technologies.github.io/22f
 theme:
   name: material
   palette:
