@@ -9,8 +9,8 @@
 	- გაწევრიანდი [google classroom][4]-ზე (თუ კოდი მოგთხოვა: ha2bi4r). პირველი დავალების ატვირთვა უკვე შესაძლებელია
 	- [დავალება 1][5]
 
-[1]:	lectures/01_intro
-[2]:	study_guide
-[3]:	classwork/01_karel_setup
+[1]:	/22f/lectures/01_intro
+[2]:	/22f/study_guide
+[3]:	/22f/classwork/01_karel_setup
 [4]:	https://classroom.google.com/c/NTUyMDkzMTQ3Mjg5?cjc=ha2bi4r
-[5]:	homework/01_karel
+[5]:	/22f/homework/01_karel
