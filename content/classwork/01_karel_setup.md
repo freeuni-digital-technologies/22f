@@ -15,7 +15,7 @@
 
 თუ უკვე დარეგისტრირდი, თითოეული კვირის მასალას კურსის გვერდზე იპოვი:
 
-[https://codehs.com/lms/assignments/102683][2]
+<https://codehs.com/lms/assignments/102683>
 
 
 ### მთავარი თემები
@@ -46,8 +46,7 @@ function start() {
 
 
 
-[https://codehs.com/go/DE0AF][3]
+[https://codehs.com/go/DE0AF][2]
 
 [1]:	https://codehs.com/go/60B72
-[2]:	https://codehs.com/lms/assignments/102683
-[3]:	https://codehs.com/go/DE0AF
+[2]:	https://codehs.com/go/DE0AF
