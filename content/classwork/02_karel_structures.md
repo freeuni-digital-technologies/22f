@@ -8,13 +8,8 @@
 - ამოხსნის ალტერნატიული ვარიანტები. მარტივად რომ შეადარო ერთმანეთს, დანომრილია.
 - პირობების მოდიფიკაციები 
 
-??? Note "codehs ინსტრუქცია"
-	{%
-   include-markdown "../classwork/01_karel_setup.md"
-   start="### codehs"
-   heading_offset="2"
-   end="მთავარი თემები"
-%}
+!!! Note 
+	[codehs ინსტრუქცია][2]
 
 #### მითითებები მეცადინეობისთვის:
 - აუცილებლად მიყევი სავარჯიშოებს ამ გვერდთან ერთად.
@@ -212,3 +207,4 @@ function fillLine3() {
 ```
 
 [1]:	https://help.codehs.com/en/articles/4502500-for-students-keyboard-shortcuts
+[2]:	/22f/classwork/01_karel_setup
