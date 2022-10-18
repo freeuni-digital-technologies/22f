@@ -29,6 +29,3 @@ include-markdown "./00_review.md"
 	
 		
 
-
-!!! Question "დახმარება და კონტაქტი"
-		- დავალების 
