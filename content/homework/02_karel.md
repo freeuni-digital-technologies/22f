@@ -5,9 +5,10 @@
 
 დავალება მარტივია - საკმარისია მხოლოდ სხვადასხვა ციკლებს შორის ზედაპირული განსხვავება გესმოდეს და რომელიც საჭიროა, იმის სინტაქსი გაიმეორო. 
 
+
 ??? Note "codehs ინსტრუქცია"
 	{%
-		include-markdown "../classwork/01_karel_setup.md"
+	include-markdown "../classwork/01_karel_setup.md"
 	   start="### codehs"
 	   heading_offset="2"
 	   end="მთავარი თემები"

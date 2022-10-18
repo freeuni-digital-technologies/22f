@@ -11,12 +11,13 @@
 
 
 ??? Note "codehs ინსტრუქცია"
-		{%
-		   include-markdown "../classwork/01_karel_setup.md"
-		   start="### codehs"
-		   heading_offset="2"
-		   end="მთავარი თემები"
-		%}
+	{%
+	include-markdown "../classwork/01_karel_setup.md"
+	   start="### codehs"
+	   heading_offset="2"
+	   end="მთავარი თემები"
+	%}
+   
 
 
 ??? tip "მინიშნება 1"
