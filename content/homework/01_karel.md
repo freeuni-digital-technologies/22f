@@ -1,10 +1,11 @@
 # დავალება 1
 {%
-   include-markdown "../classwork/01_karel_setup.md"
+	include-markdown "../classwork/01_karel_setup.md"
    start="### codehs"
    heading_offset="2"
    end="მთავარი თემები"
 %}
+   
 
 კარელი უნდა მივიდეს ბურთთან, რომელიც დევს მეხუთე უჯრაზე და აიღოს.
 
