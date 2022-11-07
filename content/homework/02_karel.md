@@ -8,12 +8,11 @@
 
 ??? Note "codehs ინსტრუქცია"
 	{%
-	include-markdown "../classwork/01_karel_setup.md"
+		include-markdown "../classwork/01_karel_setup.md"
 	   start="### codehs"
 	   heading_offset="2"
 	   end="მთავარი თემები"
 	%}
-   
 ## Follow the yellow ball road
 
 კარელის წინ ერთმანეთის მიყოლებით ბურთები დევს. კარელი უნდა გაყვეს ბურთებს და დაასრულოს მუშაობა ბოლო ბურთის შემდეგ. შეგიძლია იგულისხმო, რომ ბოლო უჯრაზე ბურთი არასდროს იდება (ანუ არსად გჭირდებათ იმის შემოწმება, წინ არის თუ არა კედელი)
