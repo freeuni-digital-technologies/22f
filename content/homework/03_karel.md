@@ -12,11 +12,13 @@
 
 ??? Note "codehs ინსტრუქცია"
 	{%
-		include-markdown "../classwork/01_karel_setup.md"
-	   start="### codehs"
-	   heading_offset="2"
-	   end="მთავარი თემები"
-	%}
+   include-markdown "../classwork/01_karel_setup.md"
+	start="### codehs"
+   heading_offset="2"
+   end="მთავარი თემები"
+%}
+   
+
 
 - ბრძანებები turnRight() და turnAround() შეგიძლია პირდაპირ გამოიყენო
 - დარწმუნდი, რომ შენი პროგრამა მუშაობს სხვადასხვა სამყაროებში. კარელს უნდა შეეძლოს ნებისმიერი ზომის სარბენი ბილიკის გავლა
