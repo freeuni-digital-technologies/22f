@@ -5,7 +5,7 @@ Requirements: python3
 pip3 install mkdocs-material mkdocs-include-markdown-plugin
 ```
 
-###  Launch
+### Launch
 ```sh
 mkdocs serve
 ```
