@@ -59,4 +59,4 @@
 [17]:	/22f/homework/04_karel
 [18]:	/22f/lectures/05_os_files
 [19]:	/22f/classwork/05_drawing_structures
-[20]:	/22f/classwork/06_structures.md
+[20]:	/22f/classwork/06_structures
