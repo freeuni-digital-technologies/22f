@@ -4,6 +4,8 @@
 **დავალებაში შეცდომების აღმოჩენის შემთხვევაში, გთხოვ, subject-ში მიუთითო "ციფრული web hw"**
 
 - დავალება 5 [html/css][1]
+- დავალება 6 [DOM javascript - calculator][2]
+
 
 ## ვებ დავალებების ატვირთვის წესი
 - გადადი დავალების ფოლდერში, მონიშნე index.html და სურათები, რომლებიც გამოიყენე,
@@ -17,3 +19,4 @@
 - გადაარქვი ფაილს სახელი იმავე პრინციპით, როგორც კარელზე. ოღონდ ამჯერად .txt-ის მაგივრად .zip-ით უნდა მთავრდებოდეს. მაგალითად "myawesomewebsite\_imghv14.zip"
 
 [1]:	https://freeuni-digital-technologies.github.io/jspilot/hw5/hw5.zip
+[2]:	https://freeuni-digital-technologies.github.io/jspilot/hw6/hw6.zip
