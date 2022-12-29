@@ -1,0 +1,1255 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://freeuni-digital-technologies.github.io/22f/classwork/03_karel_exercises/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>03. კარელი - სავარჯიშოები - შესავალი ციფრულ ტექნოლოგიებში</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#03-" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="შესავალი ციფრულ ტექნოლოგიებში" class="md-header__button md-logo" aria-label="შესავალი ციფრულ ტექნოლოგიებში" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            შესავალი ციფრულ ტექნოლოგიებში
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              03. კარელი - სავარჯიშოები
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M16.5 6c0 5.799-4.701 10.5-10.5 10.5-.426 0-.847-.026-1.26-.075A8.5 8.5 0 1 0 16.425 4.74c.05.413.075.833.075 1.259zm-1.732-2.04A9.08 9.08 0 0 1 14.999 6a9 9 0 0 1-11.04 8.768l-.004-.002a9.367 9.367 0 0 1-.78-.218c-.393-.13-.8.21-.67.602a9.938 9.938 0 0 0 .329.855l.004.01A10.002 10.002 0 0 0 12 22a10.002 10.002 0 0 0 4.015-19.16l-.01-.005a9.745 9.745 0 0 0-.855-.328c-.392-.13-.732.276-.602.67a8.934 8.934 0 0 1 .218.779l.002.005z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zm0 1.5a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm12-7a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 24 12zM4 12a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 4 12zm16.485-8.485a.75.75 0 0 1 0 1.06l-1.768 1.768a.75.75 0 0 1-1.06-1.06l1.767-1.768a.75.75 0 0 1 1.061 0zM6.343 17.657a.75.75 0 0 1 0 1.06l-1.768 1.768a.75.75 0 1 1-1.06-1.06l1.767-1.768a.75.75 0 0 1 1.061 0zM12 0a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 12 0zm0 20a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0v-2.5A.75.75 0 0 1 12 20zM3.515 3.515a.75.75 0 0 1 1.06 0l1.768 1.768a.75.75 0 1 1-1.06 1.06L3.515 4.575a.75.75 0 0 1 0-1.06zm14.142 14.142a.75.75 0 0 1 1.06 0l1.768 1.768a.75.75 0 0 1-1.06 1.06l-1.768-1.767a.75.75 0 0 1 0-1.061z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="შესავალი ციფრულ ტექნოლოგიებში" class="md-nav__button md-logo" aria-label="შესავალი ციფრულ ტექნოლოგიებში" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    შესავალი ციფრულ ტექნოლოგიებში
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        მთავარი გვერდი
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_review/" class="md-nav__link">
+        შეჯამება კვირების მიხედვით
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_study_guide/" class="md-nav__link">
+        რჩევები და მითითებები მეცადინეობისთვის
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_bonus_discussion/" class="md-nav__link">
+        📚 ბონუს დისკუსია/პრეზენტაცია
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_project/" class="md-nav__link">
+        🚀 პროექტი
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about_me/" class="md-nav__link">
+        ჩემს შესახებ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Classwork
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Classwork" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Classwork
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_karel_setup/" class="md-nav__link">
+        1. შესავალი - codehs და კარელი
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_karel_intro/" class="md-nav__link">
+        02. კარელი - პროგრამირების სტრუქტურები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_karel_structures/" class="md-nav__link">
+        02. კარელი - სავარჯიშოები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          03. კარელი - სავარჯიშოები
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        03. კარელი - სავარჯიშოები
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#614-decorate-the-fence" class="md-nav__link">
+    6.1.4: Decorate the Fence
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1.4: Decorate the Fence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-top-level" class="md-nav__link">
+    1. Top Level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-simple-solution" class="md-nav__link">
+    2. simple solution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-while-rightisblocked" class="md-nav__link">
+    3. while rightIsBlocked
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. ამოხსნა
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. ალტერნატიული ამოხსნა
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#714-random-hurdles" class="md-nav__link">
+    7.1.4: Random Hurdles
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1.4: Random Hurdles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    5. მარტივი ამოხსნა
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    მიმატება
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_karel_exercises/" class="md-nav__link">
+        04. კარელის სავარჯიშოები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_drawing_structures/" class="md-nav__link">
+        05. ცვლადები, ფუნქციის არგუმენტები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_structures/" class="md-nav__link">
+        06. ჯავასკრიპტის სტრუქტურები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_lists_objects/" class="md-nav__link">
+        07. სიები და ობიექტები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_html_css/" class="md-nav__link">
+        10. html/css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_dom_javascript/" class="md-nav__link">
+        13. DOM javascript
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Homework
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Homework" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Homework
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/00_instructions/" class="md-nav__link">
+        წესები და ატვირთვის ინსტრუქცია
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/01_karel/" class="md-nav__link">
+        დავალება 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/02_karel/" class="md-nav__link">
+        დავალება 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/03_karel/" class="md-nav__link">
+        დავალება 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/04_karel/" class="md-nav__link">
+        დავალება 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/web_hws/" class="md-nav__link">
+        05. ვების დავალებები (5-8)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Lectures
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lectures" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Lectures
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lectures/01_intro/" class="md-nav__link">
+        1. ტექნოლოგიების მნიშვნელობა
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lectures/02_introduction_to_programming/" class="md-nav__link">
+        02. პრობლემების გადაჭრის პრინციპები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lectures/03_computers/" class="md-nav__link">
+        03. კომპიუტერის მუშაობის პრინციპები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lectures/03b_choosing_specs/" class="md-nav__link">
+        03ბ. რჩევები კომპიუტერის ყიდვისთვის
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lectures/04_bits_bytes/" class="md-nav__link">
+        04. ინფორმაციის ენკოდირება ბაიტებში
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lectures/05_os_files/" class="md-nav__link">
+        05 ოპერატიული სისტემა და პროგრამები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lectures/09_internet/" class="md-nav__link">
+        09. ინტერნეტი
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#614-decorate-the-fence" class="md-nav__link">
+    6.1.4: Decorate the Fence
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1.4: Decorate the Fence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-top-level" class="md-nav__link">
+    1. Top Level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-simple-solution" class="md-nav__link">
+    2. simple solution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-while-rightisblocked" class="md-nav__link">
+    3. while rightIsBlocked
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. ამოხსნა
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. ალტერნატიული ამოხსნა
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#714-random-hurdles" class="md-nav__link">
+    7.1.4: Random Hurdles
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1.4: Random Hurdles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    5. მარტივი ამოხსნა
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    მიმატება
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="03-">03. კარელი - სავარჯიშოები</h1>
+<h2 id="614-decorate-the-fence">6.1.4: Decorate the Fence</h2>
+<p>კარელი ემზადება ჰელოუინისთვის და ალაგებს ჯეკის ფარნებს ისე, რომ ფარანი  იყოს კედლის გვერდით, არ უნდა ბლოკავდეს კარსა და ფანჯარას. დაეხმარე კარელს ასეთი ადგილების მოძებნასა და ფარნების განთავსებაში.</p>
+<p>კარელი თავდაპირველად დგას ქვედა მარცხენა კუთხეში და იყურება აღმოსავლეთისკენ. საბოლოოდ კი უნდა აღმოჩნდეს ყველაზე ზემოთ მდებარე კედელთან და იყურებოდეს ჩრდილოეთისკენ. </p>
+<h3 id="1-top-level">1. Top Level</h3>
+<p>მოდი ყველაზე ზედა დონის დეკომპოზიცია გავაკეთოთ და ამოცანის რეალური პრობლემა გამოვყოთ.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">goToFence</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">turnLeft</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">decorateFence</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">goToFence</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">frontIsClear</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>ახლა ჩვენი ამოცანაა <code>decorateFence()</code> ფუნქციის დაწერა. ამ ფუნქციის დასაწყისში კარელი ჩრდილოეთით იყურება და ღობე, რომელიც უნდა შეამოწმოს, მის მარჯვნივაა.</p>
+<h3 id="2-simple-solution">2. simple solution</h3>
+<p>დასაწყისისთვის უბრალოდ ახალი ფუნქციის გამოყენება დავტესტოთ ერთ უჯრაზე.
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">decorateFence</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">rightIsBlocked</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">putBall</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="3-while-rightisblocked">3. while rightIsBlocked</h3>
+<p>ინტუიციამ შეიძლება გვიკარნახოს, რომ if-ის მაგივრად while ჩავწეროთ, ერთი უჯრით გადასვლა დავამატოთ ყოველ ციკლზე და შეიძლება ეს საკმარისი იყოს ამოხსნისთვის. რა მოხდება კოდის გაშვების შემთხვევაში?
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">decorateFence</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">rightIsBlocked</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">putBall</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nx">putBall</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+ამ ამოხსნაში OBOB-ის ასარიდებლად მეორე putBall() არ დაგვავიწყდა, მაგრამ სამაგიეროდ კარელი პირობას შეცდომით ასრულებს. შეგიძლია, ორი პრობლემა გამოყო?</p>
+<details>
+
+<summary>პასუხის ჩვენება</summary>
+1. while-ის შემდგომ putBall()-ის დროს არ ვაკეთებთ rightIsBlocked() პირობის შემოწმებას
+2. while ციკლი პირველივე უღობო უჯრაზე გაჩერდება და არ გააგრძელებს
+</details>
+
+<h3 id="4">4. ამოხსნა</h3>
+<p>როგორც ჩანს, სხვა გზის პოვნაა საჭირო. დავუბრუნდეთ ისევ ერთი უჯრის იმპლემენტაციას. რეალურად, ერთ უჯრაზე სწორად ვაკეთებთ ყველაფერს, და ეს რაღაც ქუჩის ყველა უჯრაზე უნდა გავაკეთოთ. ყველა უჯრაზე გაკეთების "პატერნი" უკვე ნასწავლი გვაქვს (ყველა უჯრაზე გადასვლა, ყველა უჯრაზე ბურთის დადება)
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">decorateFence</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">frontIsClear</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">decorateSingle</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nx">decorateSingle</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">decorateSingle</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">rightIsBlocked</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">putBall</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w">     </span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="5">5. ალტერნატიული ამოხსნა</h3>
+<p>ახლა სხვა გზით წავიდეთ და if/else გამოვიყენოთ
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">decorateFence</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">frontIsClear</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">rightIsBlocked</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">putBall</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w">    </span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+ზოგისთვის შეიძლება ასე დაწერა უფრო ლოგიკური იყოს -  "თუ მარჯვნივ დაბლოკილია, ბურთი დადე და გადადი, თუ არა და მხოლოდ გადადი". რა თქმა უნდა, თუ შენთვის მოსახერხებელია, შეგიძლიათ ასე დაწერო. ან კიდევ ერთი ვარიანტია - დაწერო თავიდან ისე, როგორც შენთვის მოსახერხებელია და შემდეგ დაფიქრდე კოდის გაუმჯობესებაზე. რა მინუსი აქვს ამ ამოხსნას? <code>move()</code> ორივე შემთხვევაში ხდება (თან ბოლოს) და კოდი ეკვივალენტური დარჩება, თუ if/else-ის გარეთ გავიტანთ.</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">frontIsClear</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">rightIsBlocked</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">putBall</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w">   </span>
+</code></pre></div>
+<p>ასეთ შემთხვევაში else აღარ არის საჭირო, მასაც რომ წაშლი, წინა ნაწილში დაწერილ ფუნქციას მიიღებ :) ოღონდ ამჯერად decorateSingle() ფუნქციაში გატანის მაგივრად, იქვე წერია ის ორი ხაზი. ამიტომ, უფრო "სუფთა" ამოხსნა შეგეძლო პირდაპირ მოგეფიქრებინა - ან შენთვის უფრო კომფორტულით დაგეწყო და შემდეგ გაგეუმჯობესებინა</p>
+<h2 id="714-random-hurdles">7.1.4: Random Hurdles</h2>
+<p>დაწერე პროგრამა, რომელიც კარელს წაიყვანს პირველი ქუჩის ბოლოში. გაითვალისწინეთ, რომ კარელს რანდომ ლოკაციებზე შეხვდება დაბრკოლებები, რომლებსაც უნდა გადაახტეს. (კარელი უნდა ახტეს მხოლოდ და მხოლოდ მაშინ, როდესაც დაბრკოლება შეხვდება)</p>
+<p>კარელი თავდაპირველად დგას ქვედა მარცხენა კუთხეში და იყურება აღმოსავლეთისკენ. საბოლოოდ კი უნდა აღმოჩნდეს ქვედა მარჯვენა კუთხეში და იყურებოდეს აღმოსავლეთისკენ. სამყაროს სიგრძე ყოველთვის 14-ია. <strong>აუცილებელია დაწერო ფუნქცია სახელად jumHurdle()</strong></p>
+<h3 id="1">1.</h3>
+<p>ამ პირობის ჩაღრმავებას სანამ დავიწყებდეთ, სცადე ერთი წინაღობის გადახტომისთვის კოდის დაწერა.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">jump</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">turnLeft</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">turnRight</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">turnRight</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">turnLeft</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>ახლა უნდა მოვიფიქროთ, რა პირობა შევამოწმოთ. რა მოხდება, თუ ბევრს არ ვიფიქრებთ და უბრალოდ ქუჩის ბოლომდე გასვლის "პატერნს" გამოვიყენებთ?</p>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">frontIsClear</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">jump</span><span class="p">()</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>შეიძლება უკვე მიხვდით რა არის ამ პირობის მთავარი სირთულე - ჩვეულებრივ წინ დაბლოკვის შემოწმებას ვიყენებთ ხოლმე ქუჩის ბოლომდე გასვლისთვის, ახლა კი ეს არ გამოდგება. </p>
+<h3 id="2">2.</h3>
+<p>მოდი სხვა გზით წავიდეთ. ჯერ გამოკვეთილი არ არის, რა მოგვიგვარებს ამ პრობლემას, მაგრამ უბრალოდ ვცადოთ დასრულებაზე ფიქრის გარეშე ამუშავება. ასეთ სამყაროში მოძრაობის მარტივი ალგორითმი ასე წარმომიდგენია - ყოველ ჯერზე ვიპოვოთ შემდეგი წინაღობა და გადავახტეთ მას.</p>
+<p>დააკვირდით, რომ <code>findNextHurdle()</code> ფუნქცია რეალურად ქუჩის ბოლომდე გასვლის ფუნქციაა, მაგრამ ამ ამოცხსნაში უფრო მარტივი აღსაქმელი რომ იყოს მისი როლი, სახელი შევუცვალე (ისევე, როგორც <code>goToFence()</code>-ს წინა ამოცანაში)</p>
+<div class="highlight"><pre><span></span><code><span class="nx">findNextHurdle</span><span class="p">();</span><span class="w"></span>
+<span class="nx">jump</span><span class="p">();</span><span class="w"></span>
+<span class="k">while</span><span class="p">(</span><span class="nx">frontIsClear</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">findNextHurdle</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">jump</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">findNextHurdle</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">frontIsClear</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>სანამ კოდს გაუშვებდეთ, შეეცადე წარმოიდგინოთ, რა მოხდება - ყველაფერი მზადაა თუ კარელი რამეს დაეჯახება, თუ უსასრულო ციკლში გაიჭედება?</p>
+<details>
+
+<summary>დამატებითი კითხვის ჩვენება</summary>
+შეგიძლია თქვა, რომელმა ხაზმა გამოიწვია შეჯახება?
+</details>
+
+<h3 id="3">3.</h3>
+<p>ყოველთვის, როდესაც კარელი რამეს ეჯახება, ნიშნავს, რომ move() გამოვიძახეთ შემოწმების გარეშე. საჭიროა ყოველთვის შევამოწმოთ გადასვლის წინ? რა თქმა უნდა არა, მაგალითად <code>jump()</code>-ში ვიცით, რომ ზემოთ ასვლისას (პირველი move()) და უკან დაბრუნებისას (მესამე move()) წინ თავისუფალი უჯრაა, რადგან ღობეები მხოლოდ წინ არის და ამ დროს ზემოთ/ქვემოთ ვართ შეტრიალებული). თუმცა, იგივე არ ითქმის მეორე move()-ზე. შეიძლება შეცდომაში იმან შეგვიყვანოს, რომ jump()-ის გამოძახებამდე while-ში ვამოწმებთ, არის თუ არა წინ თავისუფალი, მაგრამ ამ შემოწმების შემდეგ <code>findNextHurdle()</code>-ს ვიძახებთ და კიდევ რამდენიმე ხაზია.</p>
+<p>ზოგადად, დაიმახსოვრეთ, რომ თუ შემოწმების მიუხედავად move()-ზე მაინც ერორი ხდება, ე.ი ან სხვა move() გამოიძახეთ მანამდე, ან მიმართულება შეიცვალეთ.</p>
+<p>ამიტომ, დავამატოთ საჭირო შემოწმება და ვნახოთ რა მოხდება
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">jump</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">turnLeft</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">turnRight</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">frontIsClear</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nx">turnRight</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">turnLeft</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<p>რას ფიქრობ, საკმარისია ეს ამოხსნა? ნებისმიერ სამყაროში იმუშავებს? თუ უბრალოდ wifi-ს გაფუჭების გამო მობილური ინტერნეტი მითავდებოდა და სემინარი ადრე დავამთავრეთ? </p>
+<h3 id="4_1">4.</h3>
+<p>როდესაც კოდი ზოგიერთ სამყაროში არ მუშაობს, მნიშვნელოვანია პრობლემის მკაფიოდ ჩამოყალიბება.</p>
+<ul>
+<li>რა ხდება? კარელი ზოგ სამყაროში შუა გზაზე ჩერდება</li>
+<li>როდის ხდება? ჩერდება პირველივე ისეთ შემთხვევაზე, როდესაც ერთ ღობეს ეგრევე მოსდევს მეორე ღობე </li>
+<li>რატომ ხდება? კოდის რა ნაწილში?<ul>
+<li>კარელი ჩერდება - ანუ ციკლი დროზე ადრე წყდება</li>
+<li>პროგრამაში ორი ციკლი გვაქვს<ul>
+<li><code>findNextFence()</code> ფუნქციის ციკლი როდესაც წყდება, კარელი მაინც აგრძელებს მთავარი ციკლის შესრულებას, ანუ ამ ფუნქციაში არაა პრობლემა</li>
+</ul>
+</li>
+<li>თუ <code>jump()</code>-ის შემდეგ ეგრევე ღობეა, მთავარი <code>while (frontIsClear())</code> პირობა აღარ შესრულდება და კარელი დაასრულებს მუშაობას.</li>
+</ul>
+</li>
+</ul>
+<p>გამოსავალი არის სხვანაირი პირობის შემოწმება. მაგალითად, თუ გადახტომისას მეორე უჯრაზე კედელი დაგხვდა, შეგვიძლია დატრიალება და უკან წასვლა საერთოდ არ გავაკეთოთ, რა შემთხვევაშიც შემდეგ ციკლზე კარელის მიმართულება ჩრდილოეთი იქნება.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="nx">facingEast</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">findNextHurdle</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="nx">jump</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ამ ციკლის დასრულებისას კარელი </span><span class="w"></span>
+<span class="w">    </span><span class="c1">// არის ბოლო უჯრის მეორე რიგში,</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// იყურება ჩრდილოეთით</span><span class="w"></span>
+<span class="w">    </span><span class="nx">turnAround</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">turnLeft</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">jump</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">turnLeft</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">rightIsClear</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">turnRight</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="nx">turnRight</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="nx">turnLeft</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="5_1">5. მარტივი ამოხსნა</h3>
+<p>თუ სამყაროს ზომა არ იცვლება</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">12</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">frontIsClear</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">move</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">jump</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_1">მიმატება</h2>
+<p>მოცემულია სამყარო, სადაც 2x1 პოზიციაზე დევს n ცალი ბურთი, ხოლო 3x1 პოზიციაზე - m ცალი. კარელს უნდა, რომ ეს ბურთები შეაგროვოს და დადოს ერთ რომელიმე პოზიციაზე. საბოლოო ჯამში სამყაროს ექნება ისეთი სახე, სადაც ერთ-ერთ პოზიციაზე იდება n + m ცალი ბურთი.</p>
+<p>გახსოვდეთ, რომ პროგრამა უნდა მუშაობდეს ნებისმიერი რაოდენობის ბურთებისთვის.</p>
+<p>საწყის მაგალითში, 2x1 პოზიციაზე დევს 3 ცალი ბურთი და 3x1 პოზიციაზე დევს 2 ცალი ბურთი. საბოლოო ჯამში, სამყაროში ერთ-ერთ პოზიციაზე უნდა იდოს 5 ცალი ბურთი.</p>
+<p>კარელი საწყის პოზიციაში დგას სამყაროს ქვედა მარცხენა კუთხეში და მიმართულია აღმოსავლეთით.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../02_karel_structures/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 02. კარელი - სავარჯიშოები" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              02. კარელი - სავარჯიშოები
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../04_karel_exercises/" class="md-footer__link md-footer__link--next" aria-label="Next: 04. კარელის სავარჯიშოები" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              04. კარელის სავარჯიშოები
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
