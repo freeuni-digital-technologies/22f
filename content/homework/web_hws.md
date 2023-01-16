@@ -6,6 +6,7 @@
 - დავალება 5 [html/css][1]
 - დავალება 6 [DOM javascript - calculator][2]
 - დავალება 7 [Christmas tree][3]
+- დავალება 8 [social media app][4]
 
 
 ## ვებ დავალებების ატვირთვის წესი
@@ -22,3 +23,4 @@
 [1]:	https://freeuni-digital-technologies.github.io/jspilot/hw5/hw5.zip
 [2]:	https://freeuni-digital-technologies.github.io/jspilot/hw6/hw6.zip
 [3]:	https://freeuni-digital-technologies.github.io/jspilot/christmas-tree/christmas-tree.zip
+[4]:	https://freeuni-digital-technologies.github.io/jspilot/social-media-1/social-media-1.zip
