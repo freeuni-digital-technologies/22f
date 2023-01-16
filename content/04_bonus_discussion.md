@@ -7,7 +7,8 @@
 
 ## რესურსები
 1. [29 ნოემბერი.][1] სოციალური მედიის მოდერაცია და სიტყვის თავისუფლება. დეცენტრალიზილებული სოციალური მედია. data ownership
-2. [14 დეკემბერი][2]რა გავლენას ახდენს სოციალური მედია საზოგადოების შეხედულებებზე, და რატომ. როგორ შეგვიძლია ამას გავუმკლავდეთ
+2. [14 დეკემბერი][2] რა გავლენას ახდენს სოციალური მედია საზოგადოების შეხედულებებზე, და რატომ. როგორ შეგვიძლია ამას გავუმკლავდეთ
+3. [23 დეკემბერი][3] (დაინიშნება ონლაინ) ციფრული უსაფრთხოება, დაშიფვრა, თრექინგი
 
 
 ## FAQ
@@ -56,3 +57,4 @@ Google doc-ზე მოამზადე მოკლე დოკუმენ
 
 [1]:	https://raindrop.io/iarigby/digital-technologies-28610558/search/sort=-sort&perpage=30&page=0&search=%23discussion1
 [2]:	https://raindrop.io/iarigby/digital-technologies-28610558/search/sort=-sort&perpage=30&page=0&search=%23discussion2
+[3]:	https://raindrop.io/iarigby/digital-technologies-28610558/search/sort=-sort&perpage=30&page=0&search=%23discussion-digital-safety

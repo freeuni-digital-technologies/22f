@@ -84,7 +84,6 @@ while (d < 400) {
 }
 ```
 
-
 [1]:	https://ka.khanacademy.org/computing/computer-programming/programming/functions/pt/functions
 [2]:	https://ka.khanacademy.org/computing/computer-programming/programming/logic-if-statements/pc/challenge-number-analyzer
 [3]:	https://ka.khanacademy.org/computing/computer-programming/programming/looping/pt/intro-to-while-loops
