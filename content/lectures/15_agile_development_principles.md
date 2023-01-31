@@ -1,4 +1,4 @@
-# პროგრამების შექმნის პროცესი (agile)
+# 15. პროგრამების შექმნის პროცესი (agile)
  
 <!-- n -->
 დღეს ვისაუბრებთ იმ ნაბიჯებზე, რომელიც მუშა პროგრამისთვისაა საჭირო. დამატებით, განვიხილავთ პროექტებისა და გუნდების მართვის ყველაზე წარმატებულ მოდელს - Agile და მის პრაქტიკებს. რადგან ეს საკითხი ქართულად რთულად გადმოსათარგმნი ტერმინებითაა დატვირთული, ტექსტის ნაწილი ინგლისურად იქნება. ეს არ ნიშნავს, რომ ლექცია გამოცდაზე არ შედის
@@ -74,6 +74,9 @@ Agile ტრანსფორმაციების 47% წარუმატ
 - Fail Early, Fail Often
 - Recognising when something is wrong is just as important as knowing how to do something right
 - Build what is needed, not what was planned
+
+### Failure Is Good
+if you don't embrace failure, you will not be prepared to deal when it **inevitably** happens 
 
 ## Scrum
 ![][image-3]
