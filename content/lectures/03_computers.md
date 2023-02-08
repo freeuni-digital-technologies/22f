@@ -9,52 +9,35 @@
 - Byte - 1 word. 8 bits (შეგვიძლია 256 რიცხვის ჩატევა. 0-დან 255-მდე ან -127-დან 128მდე)
 
 <!-- n -->
-<!--ბევრმა იცით, რომ კომპიუტერებს ორობითი ენა ესმით. 
--->
 - [why use binary, binary operations][1]
 - [representing numbers and letters with binary crash course cs #4][2]
 
-### ლოგიკური გეითები
-
-![][image-2]
-<!-- n -->
-[examples][3]
-- ყველა ოპერაცია, რომელსაც ჩვენ ვაკეთებთ, ამ ბლოკებით არის აგებული. მაგალითად, როგორ შექმნიდით მიმატების გეითს?
-
-აბსტრაქციის მნიშვნელობა: ისტორიის განმავლობაში იცვლებოდა პრინციპი, რომლითაც ხდებოდა ლოგიკური გეითების იმპლემენტაცია. არცერთ ეტაპზე ამას არ გამოუწვევია პროგრამებში ცვლილება - რადგან აბსტრაქციის დონეები მკაცრად გამიჯნულია.
-
-- [what logic gates do - computerphile][4]
-
-<!-- 
-## ტრანზისტორი
-დღევანდელ პროცესორებში ასეულობით მილიონიდან რამდენიმე მილიარდამდე ასეთი ტრანზისტორია.
- -->
-
+### 
 ## კომპიუტერის ნაწილები
 <!-- n -->
-რა ნაწილებს გაიხსენებდით, რაც ნებისმიერ ლეპტოპს აქვს?
+რა ნაწილებს გაიხსენებდი, რაც ნებისმიერ ლეპტოპს აქვს?
 
-----
+---- 
 
+
+![][image-2]
+
+---- 
 
 ![][image-3]
-
-----
-
-![][image-4]
 
 
 ### მეხსიერება (RAM)
 
 
-![][image-5]
+![][image-4]
 
 <!-- n -->
 მეხსიერებაში მონაცემთა ჩაწერის პრინციპი დიდად არ განსხვავდება უჯრიან რვეულში ჩაწერისგან.
 
-----
+---- 
 
-![][image-6]
+![][image-5]
 ### პროცესორი
 - ფუნქციები განისაზღვრება ინსტრუქციებით
 - ინსტრუქცია მიეწოდება ციფრის საშუალებით
@@ -64,7 +47,7 @@
 
 
 #### პროცესორის ინსტრუქციები - მანქანური კოდი
-![][image-7]
+![][image-6]
 <!-- n -->
 - მეხსიერების მართვა - კონკრეტულ მისამართზე რიცხვის ჩაწერა ან ამ მისამართიდან რიცხვის წაკითხვა შემდეგი ინსტრუქციისთვის
 - არითმეტიკული და ლოგიკური ოპერაციები
@@ -95,9 +78,9 @@
 	დააკვირდით, რომ ის რაც ჯავასკრიპტში 2 ხაზი იყო, მანქანურ კოდში 4 გამოვიდა. როგორც წესი კიდევ უფრო მეტად იზრდება ხოლმე. სწორედ ამიტომ არსებობს პროგრამირების სხვადასხვა ენები - ჩვენ გვინდა პროცესორის დავალებები უფრო ინტუიტიურად და გასაგებად ვწეროთ. პროგრამირების თითოეული ენა არის აბსტრაქცია მანქანური კოდის ზედა შრეზე და პროგრამისტს საშუალებას აძლევს უმნიშვნელო დეტალებზე არ იფიქროს.
 
 
-----
+---- 
 
-![][image-8]
+![][image-7]
 
 ### გრძელვადიანი მეხსიერება (hdd/ssd)
 თუ მეხსიერება გაშვებული პროგრამების კოდის და ამ პროგრამების მონაცემების შენახვისთვის არის, გრძელვადიან მეხსიერებაში ინახება ყველა პროგრამა და ფაილი (რომელიც RAM-დან პროგრამის/კომპიუტერის გამორთვისთანავე წაიშლება).
@@ -122,7 +105,7 @@
 - თუ მეხსიერება მცირეა, ბევრ პროგრამას ვერ გახსნი ერთდროულად. ოპერატიული სისტემა მუდმივად ცდილობს გამონახოს ადგილი პროგრამების მონაცემებისთვის, მუდმივად უწევს მეხსიერებაში ამ მონაცემების მიწევ-მოწევა გამოსათავისუფლებლად - რაც თავის მხრივ დიდ დროს მოითხოვს და კომპიუტერს ანელებს
 - კომპიუტერის ყველაზე "ძვირი" (რაც დიდ დროს მოითხოვს) ოპერაცია არის გრძელვადიანი მეხსიერებიდან წაკითხვა/ჩაწერა (პროგრამების/ფაილების). hdd გარდა იმისა რომ თავისთავად ნელია, რამდენიმე წელში მისი ბლოკები ზიანდება და კიდევ უფრო მეტი დრო ჭირდება. ssd უფრო და უფრო იაფი და ხელმისაწვდომი ხდება, hddის ჩანაცვლებას სულ რამდენიმე წუთი უნდა და თუ არ გაგიკეთებიათ აუცილებლად შეცვალეთ. გეგმიხვდებით, რომ თქვენი კომპიუტერი საერთოდ არ არის ნელი.
 
-თუ ახალი ლეპტოპის ყიდვაზე ფიქრობთ, შეგიძლიათ ნახოთ [რჩევები არჩევისთვის][5]
+თუ ახალი ლეპტოპის ყიდვაზე ფიქრობთ, შეგიძლიათ ნახოთ [რჩევები არჩევისთვის][3]
 
 ## კითხვები მომავალი კვირისთვის
 - თუ RAM გამორთვისას სუფთავდება, მაშინ როგორ შეუძლია ზოგ ოპერატიულ სისტემას/პროგრამას გახსნილი ფანჯრების დაბრუნება კომპიუტერის ჩართვისას?
@@ -132,15 +115,12 @@
 
 [1]:	https://www.youtube.com/results?search_query=binary+computerphile
 [2]:	https://www.youtube.com/watch?v=1GSjbWt0c9M&list=PLH2l6uzC4UEW0s7-KewFLBC1D0l6XRfye&index=5
-[3]:	https://www.wikiwand.com/en/Logic_gate
-[4]:	https://www.youtube.com/watch?v=UvI-AMAtrvE
-[5]:	/22f/ectures/03b_choosing_specs
+[3]:	/22f/ectures/03b_choosing_specs
 
 [image-1]:	http://shortrope.com/wp-content/uploads/2015/04/Binary-Primer.png
-[image-2]:	https://instrumentationtools.com/wp-content/uploads/2017/07/instrumentationtools.com_digital-logic-gates-truthtables.png
-[image-3]:	https://www.learncomputerscienceonline.com/wp-content/uploads/2020/05/Computer-Motherboard.jpg
-[image-4]:	https://upload.wikimedia.org/wikipedia/commons/d/db/Swissbit_2GB_PC2-5300U-555.jpg
-[image-5]:	https://arith-matic.com/notebook/img/memory/memory-addressing.jpg
-[image-6]:	https://5.imimg.com/data5/GH/CM/MY-16113916/intel-processor-500x500.jpg
-[image-7]:	https://i0.wp.com/www.techquintal.com/wp-content/uploads/2021/12/Advantages-and-Disadvantages-of-Assembly-Language.jpg?fit=1024%2C576&ssl=1
-[image-8]:	https://www.backblaze.com/blog/wp-content/uploads/2018/03/hdd_vs_ssd_bz.png
+[image-2]:	https://www.learncomputerscienceonline.com/wp-content/uploads/2020/05/Computer-Motherboard.jpg
+[image-3]:	https://upload.wikimedia.org/wikipedia/commons/d/db/Swissbit_2GB_PC2-5300U-555.jpg
+[image-4]:	https://arith-matic.com/notebook/img/memory/memory-addressing.jpg
+[image-5]:	https://5.imimg.com/data5/GH/CM/MY-16113916/intel-processor-500x500.jpg
+[image-6]:	https://i0.wp.com/www.techquintal.com/wp-content/uploads/2021/12/Advantages-and-Disadvantages-of-Assembly-Language.jpg?fit=1024%2C576&ssl=1
+[image-7]:	https://www.backblaze.com/blog/wp-content/uploads/2018/03/hdd_vs_ssd_bz.png
