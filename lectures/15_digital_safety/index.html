@@ -1,0 +1,1284 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://freeuni-digital-technologies.github.io/22f/lectures/15_digital_safety/">
+      
+      
+        <link rel="prev" href="../15_agile_development_principles/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11">
+    
+    
+      
+        <title>15. ციფრული უსაფრთხოება - შესავალი ციფრულ ტექნოლოგიებში</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#15" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="შესავალი ციფრულ ტექნოლოგიებში" class="md-header__button md-logo" aria-label="შესავალი ციფრულ ტექნოლოგიებში" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            შესავალი ციფრულ ტექნოლოგიებში
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              15. ციფრული უსაფრთხოება
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.768 3.96v.001l-.002-.005a9.08 9.08 0 0 0-.218-.779c-.13-.394.21-.8.602-.67.29.096.575.205.855.328l.01.005A10.002 10.002 0 0 1 12 22a10.002 10.002 0 0 1-9.162-5.985l-.004-.01a9.722 9.722 0 0 1-.329-.855c-.13-.392.277-.732.67-.602.257.084.517.157.78.218l.004.002A9 9 0 0 0 14.999 6a9.09 9.09 0 0 0-.231-2.04ZM16.5 6c0 5.799-4.701 10.5-10.5 10.5-.426 0-.847-.026-1.26-.075A8.5 8.5 0 1 0 16.425 4.74c.05.413.075.833.075 1.259Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 19a7 7 0 1 1 0-14 7 7 0 0 1 0 14Zm0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 1 0 0 11Zm-5.657.157a.75.75 0 0 1 0 1.06l-1.768 1.768a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.767-1.768a.75.75 0 0 1 1.061 0ZM3.515 3.515a.75.75 0 0 1 1.06 0l1.768 1.768a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L3.515 4.575a.75.75 0 0 1 0-1.06ZM12 0a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 12 0ZM4 12a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 4 12Zm8 8a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0v-2.5A.75.75 0 0 1 12 20Zm12-8a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 24 12Zm-6.343 5.657a.75.75 0 0 1 1.06 0l1.768 1.768a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018l-1.768-1.767a.75.75 0 0 1 0-1.061Zm2.828-14.142a.75.75 0 0 1 0 1.06l-1.768 1.768a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l1.767-1.768a.75.75 0 0 1 1.061 0Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="შესავალი ციფრულ ტექნოლოგიებში" class="md-nav__button md-logo" aria-label="შესავალი ციფრულ ტექნოლოგიებში" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    შესავალი ციფრულ ტექნოლოგიებში
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        მთავარი გვერდი
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_review/" class="md-nav__link">
+        შეჯამება კვირების მიხედვით
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_study_guide/" class="md-nav__link">
+        რჩევები და მითითებები მეცადინეობისთვის
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_bonus_discussion/" class="md-nav__link">
+        📚 ბონუს დისკუსია/პრეზენტაცია
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_project/" class="md-nav__link">
+        🚀 პროექტი
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about_me/" class="md-nav__link">
+        ჩემს შესახებ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Classwork
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Classwork
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/01_karel_setup/" class="md-nav__link">
+        1. შესავალი - codehs და კარელი
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/02_karel_intro/" class="md-nav__link">
+        02. კარელი - პროგრამირების სტრუქტურები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/02_karel_structures/" class="md-nav__link">
+        02. კარელი - სავარჯიშოები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/03_karel_exercises/" class="md-nav__link">
+        03. კარელი - სავარჯიშოები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/04_karel_exercises/" class="md-nav__link">
+        04. კარელის სავარჯიშოები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/05_drawing_structures/" class="md-nav__link">
+        05. ცვლადები, ფუნქციის არგუმენტები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/06_structures/" class="md-nav__link">
+        06. ჯავასკრიპტის სტრუქტურები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/07_lists_objects/" class="md-nav__link">
+        07. სიები და ობიექტები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/10_html_css/" class="md-nav__link">
+        10. html/css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/13_dom_javascript/" class="md-nav__link">
+        13. DOM javascript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/14_dom_javascript/" class="md-nav__link">
+        14. DOM Javascript -  todo list app
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Homework
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Homework
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/00_instructions/" class="md-nav__link">
+        წესები და ატვირთვის ინსტრუქცია
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/01_karel/" class="md-nav__link">
+        დავალება 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/02_karel/" class="md-nav__link">
+        დავალება 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/03_karel/" class="md-nav__link">
+        დავალება 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/04_karel/" class="md-nav__link">
+        დავალება 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/web_hws/" class="md-nav__link">
+        05. ვების დავალებები (5-8)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Lectures
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Lectures
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_intro/" class="md-nav__link">
+        1. ტექნოლოგიების მნიშვნელობა
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_introduction_to_programming/" class="md-nav__link">
+        02. პრობლემების გადაჭრის პრინციპები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_computers/" class="md-nav__link">
+        03. კომპიუტერის მუშაობის პრინციპები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03b_choosing_specs/" class="md-nav__link">
+        03ბ. რჩევები კომპიუტერის ყიდვისთვის
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_bits_bytes/" class="md-nav__link">
+        04. ინფორმაციის ენკოდირება ბაიტებში
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_os_files/" class="md-nav__link">
+        05 ოპერატიული სისტემა და პროგრამები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_internet/" class="md-nav__link">
+        09. ინტერნეტი
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_application_components/" class="md-nav__link">
+        13. აპლიკაციების კომპონენტები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_agile_development_principles/" class="md-nav__link">
+        15. პროგრამების შექმნის პროცესი (agile)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          15. ციფრული უსაფრთხოება
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        15. ციფრული უსაფრთხოება
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    რესურსებზე წვდომა
+  </a>
+  
+    <nav class="md-nav" aria-label="რესურსებზე წვდომა">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    მოწყობილობა
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud" class="md-nav__link">
+    cloud პროდუქტებზე
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    ქსელი
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wifi" class="md-nav__link">
+    wifi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    ინტერნეტში გზავნილზე
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    დაშიფვრა
+  </a>
+  
+    <nav class="md-nav" aria-label="დაშიფვრა">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    მარტივი
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    სიმეტრიული - პაროლი
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    ასიმეტრიული
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy" class="md-nav__link">
+    Privacy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    თავდაცვა
+  </a>
+  
+    <nav class="md-nav" aria-label="თავდაცვა">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#https-secure-http" class="md-nav__link">
+    https (secure http)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unique-passwords" class="md-nav__link">
+    Unique Passwords
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-managers" class="md-nav__link">
+    Password Managers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-factor-authentication" class="md-nav__link">
+    Multi Factor Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi Factor Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    მაგალითები
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-open-source" class="md-nav__link">
+    Data - ბრმა ნდობა ან Open Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    რესურსებზე წვდომა
+  </a>
+  
+    <nav class="md-nav" aria-label="რესურსებზე წვდომა">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    მოწყობილობა
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud" class="md-nav__link">
+    cloud პროდუქტებზე
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    ქსელი
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wifi" class="md-nav__link">
+    wifi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    ინტერნეტში გზავნილზე
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    დაშიფვრა
+  </a>
+  
+    <nav class="md-nav" aria-label="დაშიფვრა">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    მარტივი
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    სიმეტრიული - პაროლი
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    ასიმეტრიული
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy" class="md-nav__link">
+    Privacy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    თავდაცვა
+  </a>
+  
+    <nav class="md-nav" aria-label="თავდაცვა">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#https-secure-http" class="md-nav__link">
+    https (secure http)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unique-passwords" class="md-nav__link">
+    Unique Passwords
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-managers" class="md-nav__link">
+    Password Managers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-factor-authentication" class="md-nav__link">
+    Multi Factor Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi Factor Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    მაგალითები
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-open-source" class="md-nav__link">
+    Data - ბრმა ნდობა ან Open Source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="15">15. ციფრული უსაფრთხოება</h1>
+<h2 id="_1">რესურსებზე წვდომა</h2>
+<p>შენი აზრით, რა წვდომა აქვთ შენს ინფორმაციაზე:
+- საიტებს
+- გადმოწერილ აპლიკაციებს
+- wifi-ს სხვა მომხმარებლებს
+- ქლაუდ აპლიკაციის მფლობელ კომპანიას 
+- ორგანიზაციის ექაუნთებს
+- ელექტრონული მოწყობილობის გამომშვებ კომპანიას
+- ოპერატიული სისტემის გამომშვებ კომპანიას</p>
+<h3 id="_2">მოწყობილობა</h3>
+<p>ვის შეუძლია წაიკითხოს/დააკოპიროს შენი ფაილები?
+- ოპერატიული სისტემის კომპანიას (Android/Microsoft)
+- ლეპტოპ ოპერატიული სისტემის (Windows/MacOS/Linux) შემთხვევაში, ყველა პროგრამას, რომელსაც გადმოწერ
+- მობილური ოპერატიული სისტემის შემთხვევაში (android/iOS/lineageOS) აპლიკაციებს გრანულარულად</p>
+<!-- n -->
+<p>გრანულარული წვდომა ნიშნავს, რომ ყველა აპლიკაციამ <strong>სათითაოდ</strong> უნდა მოითხოვოს სხვადასხვა რესურსების წაკითხვაზე (სურათები, ფაილები, კალენდარი, და ა.შ.) უფლება, თუმცა მასზე ნებართვის მოპოვების შემდეგ, შეუძლია სურვილისამებრ გამოიყენოს. წვდომის მოთხოვნის ვალიდურობასა და მონაცემთა დათქმული მიზნით გამოყენებას Apple და Google უზრუნველყოფენ - ამიტომაა საჭირო App/Play Store-ზე აპლიკაციის გამოქვეყნებისას მკაცრი და ზოგჯერ გრძელვადიანი Review.</p>
+<h3 id="cloud">cloud პროდუქტებზე</h3>
+<p>ვის აქვს წვდომა ინფორმაციაზე, რომელსაც ინახავს გუგლი? ეფლი?</p>
+<!-- n -->
+<p>აპლიკაციების დაცული პაროლი მხოლოდ სხვა ადამიანებისგან იცავს, მაგრამ შენი ფაილები ისევე ინახება გუგლის კომპიუტერზე (სერვერზე), როგორც შენსაზე. გუგლის თითქმის ყველა პროგრამას შეუძლია თავისუფლად წაიკითხოს და გამოიყენოს (კლავიატურის გამოყენებაც კი)
+ეფლის შემთხვევაში ეს მონაცემები ასევე სერვერზე ინახება, თუმცა გაგზავნამდე შენი პაროლით იშიფრება, რომელზე წვდომაც ეფლს არ აქვს. ამ საკითხის უფრო სიღრმისეულად განხილვა სამწუხაროდ ვერ მოვასწარით, თუმცა მეტი ინფორმაციისთვის, შეგიძლია წაიკითხო Client Side Encryption-ის შესახებ</p>
+<h3 id="_3">ქსელი</h3>
+<h3 id="wifi">wifi</h3>
+<p>ყველას, ვინც ქსელშია (ვინც პაროლი იცის)</p>
+<!-- ნ -->
+<p>wifi ეფექტურად არის შიდა ქსელი და ნებისმიერს ამ ქსელში შეუძლია ნახოს ყველა შენი კომუნიკაცია. ოთახში ხმამაღლა ლაპარაკს გავს.</p>
+<h3 id="_4">ინტერნეტში გზავნილზე</h3>
+<ul>
+<li>გამგზავნის ISP-ს</li>
+<li>მიმღების ISP-ს</li>
+<li>შუალედურ ISP-ს</li>
+<li>inteceptor-ს (სრულიად შესაძლებელია მესამე პირის მიერ მოსასმენი მოწყობილობის დაყენება შნურზე)</li>
+</ul>
+<!-- ნ -->
+<p>როგორ მოვახერხოთ უსაფრთხოების და პირადი ინფორმაციის შენახვა ამ პირობებში? როგორ აკეთებდით ამას სკოლაში?</p>
+<h2 id="_5">დაშიფვრა</h2>
+<!-- n -->
+<p>ყველამ იცის, რომ მთელი პლანეტის ფუნქციონირება, ინფორმაციის კონფიდენციალურობა და ფინანსური ტრანზაქციების უსაფრთხოება დაშიფვრის ალგორითმების წყალობითაა შესაძლებელი. დაშიფვრის მუშაობის პრინციპისა და ყველასთვის მნიშვნელოვანი დეტალების გასაგებად კომპიუტერული მეცნიერების სწავლა არაა აუცილებელი, შეგვიძლია ყოფითი მაგალითით განვიხილოთ. </p>
+<p>წარმოვიდგინოთ, რომ გვყავს ორი ადამიანი, რომელსაც წერილის (ინტერნეტ პაკეტი) გაგზავნა უნდა ფოსტის (ინტერნეტი) საშუალებით. წერილის შინაარსი კრიტიკულად პირადულია, და გვინდა ყველაფერი მოვიმოქმედოთ იმისთვის, რომ გზაში სხვა პირებმა იგი გახსნის შემთხვევაშიც ვერ წაიკითხოს.</p>
+<h3 id="_6">მარტივი</h3>
+<p><img alt="" src="https://img.wattpad.com/2193998f1b3aba21754ec39bdb499721f952f358/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f346351396b524557764a61366c673d3d2d3631373338373637382e313534613732333164333733386633313238343839313432373431392e6a7067?s=fit&amp;w=720&amp;h=720" /></p>
+<!-- n -->
+<p>წარმოიდგინე კოდი, რომელზეც წინასწარ შეთანხმდები ადრესატთან. მაგალითად, ყოველი ასო წაიწევს სამით. მესამე პირი სიტყვებს ვერ აღიქვამს, მაგრამ თუ ხშირად გამოყენებული ტაქტიკები იცის, შეუძლია სხვადასხვა ვერსია სცადოს და შიფრი "გატეხოს".  </p>
+<!-- n -->
+
+<h3 id="-">სიმეტრიული - პაროლი</h3>
+<ul>
+<li>რითიც შიფრავ/იმით ხსნი</li>
+<li>მესიჯს თუ გააგზავნი, სხვამ პაროლი უნდა იცოდეს - <strong>vulnerability</strong></li>
+</ul>
+<!-- n -->
+
+<p>ამ მიზეზით, მარტივი დაშიფვრა უსაფრთხოებისთვის არ გამოდგება. ალგორითმის გარდა, აუცილებელია იყოს რაღაც დამატებითი, <strong>ინდივიდუალური</strong>. ისე, რომ თუნდაც სხვამ გაიგოს რომელ ალგორითმს იყენებ დასაშიფრად, ვერ შეძლოს გატეხვა.</p>
+<p>ამის პარალელისთვის შეგვიძლია წარმოვიდგინოთ, რომ ჩვენ და წერილის ადრესატს გვაქვს გასაღები კონკრეტული ყუთისთვის. ჩვენ გზავნილს ვდებთ ყუთში, ვკეტავთ გასაღებით, ხოლო ადრესატი ასეთივე გასაღებით ხსნის.</p>
+<p><em>რა პრობლემას ხედავ ასეთ პრინციპში?</em></p>
+<p>გასაღების უსაფრთხოდ მიწოდება ადრესატისთვის რთული, ზოგ შემთხვევაში კი შეუძლებელია. თუ პაროლზე პირადად არ შეთანხმდებით, მაშინ <strong>დაშიფვრის გარეშე მოგიწევს მისი გაგზავნა</strong>, და თუ მესამე პირმა პაროლი გზაში ხელში ჩაიგდო, მომავალი კომუნიკაცია დაუცველია. ანალოგი იქნებოდა დაულუქავი კონვერტით გასაღების გაგზავნა - გზაში მისი ასლის გაკეთება მარტივია.</p>
+<h3 id="_7">ასიმეტრიული</h3>
+<ul>
+<li>public/private pair</li>
+<li>ანალოგი: უგზავნი ბოქლომს, მაგრამ გასაღები მხოლოდ შენ გაქვს</li>
+</ul>
+<!-- n -->
+<p>ამ პრობლემასთან გასამკლავებლად</p>
+<h2 id="privacy">Privacy</h2>
+<h2 id="_8">თავდაცვა</h2>
+<h3 id="https-secure-http">https (secure http)</h3>
+<p><img alt="" src="data:image/png;base64,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" /></p>
+<!-- n -->
+<p>https პროტოკოლის დროს, სერვერსა და ბრაუზერს ერთმანეთთან კომუნიკაცია <strong>ასიმეტრიული დაშიფვრით </strong> აქვთ. როდესაც საიტზე შესვლა (ანუ საიტის html-ის გადმოწერა) გინდა, ბრაუზერი ჯერ იგებს სერვერის საჯარო გასაღებს, და მისი მეშვეობით შიფრავს მოთხოვნას. სერვერი პირადი გასაღების მეშვეობით ხსნის შიფრს მოთხოვნას. შედეგად, მესიჯის ან სურათის გაგზავნისას, wifi ქსელი და isp მხოლოდ გაურკვეველ რიცხვებს ხედავენ. ამავენაირად, სერვერსაც აეგზავნება ბრაუზერის საჯარო გასაღები, და მისგან მოსული პასუხი ისეა დაშიფრული, რომ მხოლოდ შენს ბრაუზერს შეუძლია გაიგოს, რა არის გამოგზავნილი.</p>
+<p>თუ საიტი http-ს არ იყენებს, შენს isp-ს და wifi ქსელის სხვა წევრებს ასევე წვდომა აქვთ შენს<strong>ყველა გაგზავნილ/მიღებულ ინფორმაციაზე</strong> (პირადი მესიჯების ჩათვლით). თანამედროვე ბრაუზერები გაფრთხილებენ ასეთ საიტზე შესვლისას - ჩნდება "your connection is not secure" მესიჯი, რომლისთვის გვერდის ასავლელი ღილაკი რამდენიმე მენიუს იქითაა დამალული.</p>
+<h3 id="unique-passwords">Unique Passwords</h3>
+<h3 id="password-managers">Password Managers</h3>
+<ul>
+<li>google and third party android developers</li>
+<li>apple keychain</li>
+<li>bitwarden</li>
+<li>Firefox users</li>
+</ul>
+<!-- n -->
+<p>მარტივი გასაგებია, რამხელა საფრთხეს შეიცავს ერთი პაროლის ბევრგან გამოყენება.  თუმცა, ამ პრინციპის შესრულება დახმარების გარეშე შეუძლებელია - აბსურდია ადამიანს უამრავ საიტზე სხვადასხვა პაროლების დაყენება მოთხოვო. ამიტომ ეს პაროლები სადღაც უნდა შევინახოთ - თუმცა ისინიც დაცული (დაშიფრული) უნდა იყოს. პროგრამები იყენებენ ე.წ. master key-ს - მთავარ, მნიშვნელოვან პაროლს. პაროლის მენეჯერები ამ მიზნისთვის გამოიყენება, და თუ მათით არ სარგებლობ, ე.ი. ყველგან ერთი პაროლი გაქვს და შენი სენსიტიური მონაცემების მოპოვებას ნებისმიერი მსურველი შეძლებს - სუსტად დაცული ან დაუცველ საიტებზე შეღწევით, პაროლის გაგების და სენსიტიურ საიტზე გამოყენებით.</p>
+<h3 id="multi-factor-authentication">Multi Factor Authentication</h3>
+<ul>
+<li>სანდო მოწყობილობები</li>
+<li>ახალ მოწყობილობაზე დამატებითი ვერიფიკაცია</li>
+<li>ვერიფიკაციის კოდი არის დროებითი</li>
+</ul>
+<!-- n -->
+<p>ამ პრინციპის იდეა ისაა, რომ სენსიტიური სისტემები (სოციალური მედიის პროფილი, მეილი, პირადი ფაილები) მომხმარებლის პაროლის გაგების შემთხვევაშიც კი უსაფრთხოდ დარჩეს. დამატებითი იდენთიფიკაცია, როგორ წესი, ერთჯერადი sms კოდის საშუალებით ხდება.</p>
+<h4 id="_9">მაგალითები</h4>
+<ul>
+<li>google/facebook 2FA</li>
+<li>3D Secure Payments</li>
+<li>banking mobile/web app login</li>
+</ul>
+<!-- n -->
+<p>ხშირად, ვერიფიკაციის კოდს დამატებითი ინფორმაცია მოყვება - მაგალითად, ინტერნეტ გადახდისას 3D secure კოდი როდესაც მოგდის, მითითებულია საიტი და თანხის რაოდენობა, რომ ბრაუზერის კომპრომისის შემთხვევაშიც კი უზრუნველყოფილი იყოს უსაფრთხოება. მაგალითად, დააყენე რაღაც extension, რომელიც გადახდის გვერდზე ჯავასკრიპტით ცვლის თანხის რაოდენობას, უფრო ნაკლებს გიჩვენებს, სინამდვილეში კი მეტი თანხის ჩამოჭრას თანხმდები.</p>
+<h3 id="data-open-source">Data - ბრმა ნდობა ან Open Source</h3>
+<p>მნიშვნელოვანია ყოველთვის, გვახსოვდეს, რომ დახურული აპლიკაციების უმეტესობის "უსაფრთხოება" მხოლოდ ცარიელი, გარანტიის გარეშე მოცემული პირობაა - ჩვენს მოწყობილობაზე მოდის მხოლოდ ორობითი კოდი პროცესორისთვის, და მისგან აზრის გამოტანა შეუძლებელია. მათი სერვერები კი დახურულია და წარმოდგენა არ გვაქვს სინამდვილეში რისთვის გამოიყენება ჩვენი მონაცემები. </p>
+<p>პერსონალური კომპიუტერების გაჩენიდან არსებობს მოძრაობა ასეთი პროგრამების წინააღმდეგ - Open Source/Free Software Movement. ამ ფილოსოფიის მიმდევრებისთვის მნიშვნელოვანია კოდის საჯაროობა და თავისუფლება - მათი შეხედულებით, მომხმარებელს აქვს <strong>ფუნდამენტური</strong> უფლება, იცოდეს რას აკეთებს პროგრამის კოდი.</p>
+<!--
+### Zero trust encryption
+
+
+TODO:
+
+## Privacy/Tracking
+### 3rd Party Scripts
+### Data Sharing
+### Cookies
+### Ghost Profiles
+
+
+Cookies (privacy, თავდაცვა)
+
+- pgp
+-->
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6df46069.min.js"></script>
+      
+    
+  </body>
+</html>

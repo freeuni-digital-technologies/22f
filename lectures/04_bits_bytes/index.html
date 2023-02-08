@@ -1,0 +1,1254 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://freeuni-digital-technologies.github.io/22f/lectures/04_bits_bytes/">
+      
+      
+        <link rel="prev" href="../03b_choosing_specs/">
+      
+      
+        <link rel="next" href="../05_os_files/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11">
+    
+    
+      
+        <title>04. ინფორმაციის ენკოდირება ბაიტებში - შესავალი ციფრულ ტექნოლოგიებში</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#04" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="შესავალი ციფრულ ტექნოლოგიებში" class="md-header__button md-logo" aria-label="შესავალი ციფრულ ტექნოლოგიებში" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            შესავალი ციფრულ ტექნოლოგიებში
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              04. ინფორმაციის ენკოდირება ბაიტებში
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.768 3.96v.001l-.002-.005a9.08 9.08 0 0 0-.218-.779c-.13-.394.21-.8.602-.67.29.096.575.205.855.328l.01.005A10.002 10.002 0 0 1 12 22a10.002 10.002 0 0 1-9.162-5.985l-.004-.01a9.722 9.722 0 0 1-.329-.855c-.13-.392.277-.732.67-.602.257.084.517.157.78.218l.004.002A9 9 0 0 0 14.999 6a9.09 9.09 0 0 0-.231-2.04ZM16.5 6c0 5.799-4.701 10.5-10.5 10.5-.426 0-.847-.026-1.26-.075A8.5 8.5 0 1 0 16.425 4.74c.05.413.075.833.075 1.259Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 19a7 7 0 1 1 0-14 7 7 0 0 1 0 14Zm0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 1 0 0 11Zm-5.657.157a.75.75 0 0 1 0 1.06l-1.768 1.768a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.767-1.768a.75.75 0 0 1 1.061 0ZM3.515 3.515a.75.75 0 0 1 1.06 0l1.768 1.768a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L3.515 4.575a.75.75 0 0 1 0-1.06ZM12 0a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 12 0ZM4 12a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 4 12Zm8 8a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0v-2.5A.75.75 0 0 1 12 20Zm12-8a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 24 12Zm-6.343 5.657a.75.75 0 0 1 1.06 0l1.768 1.768a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018l-1.768-1.767a.75.75 0 0 1 0-1.061Zm2.828-14.142a.75.75 0 0 1 0 1.06l-1.768 1.768a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l1.767-1.768a.75.75 0 0 1 1.061 0Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="შესავალი ციფრულ ტექნოლოგიებში" class="md-nav__button md-logo" aria-label="შესავალი ციფრულ ტექნოლოგიებში" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    შესავალი ციფრულ ტექნოლოგიებში
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        მთავარი გვერდი
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_review/" class="md-nav__link">
+        შეჯამება კვირების მიხედვით
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_study_guide/" class="md-nav__link">
+        რჩევები და მითითებები მეცადინეობისთვის
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_bonus_discussion/" class="md-nav__link">
+        📚 ბონუს დისკუსია/პრეზენტაცია
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_project/" class="md-nav__link">
+        🚀 პროექტი
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about_me/" class="md-nav__link">
+        ჩემს შესახებ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Classwork
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Classwork
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/01_karel_setup/" class="md-nav__link">
+        1. შესავალი - codehs და კარელი
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/02_karel_intro/" class="md-nav__link">
+        02. კარელი - პროგრამირების სტრუქტურები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/02_karel_structures/" class="md-nav__link">
+        02. კარელი - სავარჯიშოები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/03_karel_exercises/" class="md-nav__link">
+        03. კარელი - სავარჯიშოები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/04_karel_exercises/" class="md-nav__link">
+        04. კარელის სავარჯიშოები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/05_drawing_structures/" class="md-nav__link">
+        05. ცვლადები, ფუნქციის არგუმენტები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/06_structures/" class="md-nav__link">
+        06. ჯავასკრიპტის სტრუქტურები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/07_lists_objects/" class="md-nav__link">
+        07. სიები და ობიექტები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/10_html_css/" class="md-nav__link">
+        10. html/css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/13_dom_javascript/" class="md-nav__link">
+        13. DOM javascript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/14_dom_javascript/" class="md-nav__link">
+        14. DOM Javascript -  todo list app
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Homework
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Homework
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/00_instructions/" class="md-nav__link">
+        წესები და ატვირთვის ინსტრუქცია
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/01_karel/" class="md-nav__link">
+        დავალება 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/02_karel/" class="md-nav__link">
+        დავალება 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/03_karel/" class="md-nav__link">
+        დავალება 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/04_karel/" class="md-nav__link">
+        დავალება 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/web_hws/" class="md-nav__link">
+        05. ვების დავალებები (5-8)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Lectures
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Lectures
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_intro/" class="md-nav__link">
+        1. ტექნოლოგიების მნიშვნელობა
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_introduction_to_programming/" class="md-nav__link">
+        02. პრობლემების გადაჭრის პრინციპები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_computers/" class="md-nav__link">
+        03. კომპიუტერის მუშაობის პრინციპები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03b_choosing_specs/" class="md-nav__link">
+        03ბ. რჩევები კომპიუტერის ყიდვისთვის
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          04. ინფორმაციის ენკოდირება ბაიტებში
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        04. ინფორმაციის ენკოდირება ბაიტებში
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    სურათები
+  </a>
+  
+    <nav class="md-nav" aria-label="სურათები">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    პიქსელი
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    პიქსელების რაოდენობა - რეზოლუცია
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    ბაიტების რაოდენობა
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    ფერები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    კომპრესირება
+  </a>
+  
+    <nav class="md-nav" aria-label="კომპრესირება">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    მაგალითი
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    სურათის შენახვის ფორმატები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    ციფრული ფოტოს შექმნა
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    ვიდეოები
+  </a>
+  
+    <nav class="md-nav" aria-label="ვიდეოები">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    ვიდეოს მოსალოდნელი ზომა
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    კომპრესირების ალგორითმი
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    ტექსტი
+  </a>
+  
+    <nav class="md-nav" aria-label="ტექსტი">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ascii" class="md-nav__link">
+    ascii ფორმატი
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utf-8" class="md-nav__link">
+    utf-8 ფორმატი
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zip-rar" class="md-nav__link">
+    არქივები (zip, rar)
+  </a>
+  
+    <nav class="md-nav" aria-label="არქივები (zip, rar)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    ზოგადი კომპრესირება
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_os_files/" class="md-nav__link">
+        05 ოპერატიული სისტემა და პროგრამები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_internet/" class="md-nav__link">
+        09. ინტერნეტი
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_application_components/" class="md-nav__link">
+        13. აპლიკაციების კომპონენტები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_agile_development_principles/" class="md-nav__link">
+        15. პროგრამების შექმნის პროცესი (agile)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_digital_safety/" class="md-nav__link">
+        15. ციფრული უსაფრთხოება
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    სურათები
+  </a>
+  
+    <nav class="md-nav" aria-label="სურათები">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    პიქსელი
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    პიქსელების რაოდენობა - რეზოლუცია
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    ბაიტების რაოდენობა
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    ფერები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    კომპრესირება
+  </a>
+  
+    <nav class="md-nav" aria-label="კომპრესირება">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    მაგალითი
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    სურათის შენახვის ფორმატები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    ციფრული ფოტოს შექმნა
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    ვიდეოები
+  </a>
+  
+    <nav class="md-nav" aria-label="ვიდეოები">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    ვიდეოს მოსალოდნელი ზომა
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    კომპრესირების ალგორითმი
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    ტექსტი
+  </a>
+  
+    <nav class="md-nav" aria-label="ტექსტი">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ascii" class="md-nav__link">
+    ascii ფორმატი
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utf-8" class="md-nav__link">
+    utf-8 ფორმატი
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zip-rar" class="md-nav__link">
+    არქივები (zip, rar)
+  </a>
+  
+    <nav class="md-nav" aria-label="არქივები (zip, rar)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    ზოგადი კომპრესირება
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="04">04. ინფორმაციის ენკოდირება ბაიტებში</h1>
+<hr />
+<p>ამ ლექციის საკვანძო ტერმინები
+- ენკოდირება/დეკოდირება
+- პიქსელი, რეზოლუცია
+- ფაილის ფორმატი
+- კომპრესირება/დეკომპრესირება</p>
+<!-- n -->
+<p>ჩვენ ვისწავლეთ, რომ კომპიუტერში ინფორმაცია ბიტებში ინახება და მუშავდება, მაგრამ ჯერ შეუძლებელია იმის აღქმა, თუ როგორ გადაითარგმნება სხვადასხვა სახის ინფორმაცია (სურათი, ვიდეო, აუდიო, ტექსტი) ბიტებში.</p>
+<p>ამ ლექციაში შევეცდებით კარგად გავიგოთ, რას ნიშნავს, როდესაც ვამბობთ რომ კომპიუტერში ყველაფერი არის რიცხვი. როგორ შეიძლება, რომ მხოლოდ და მხოლოდ ციფრების მიმდევრობით მუშაობდეს ყველა ციფრული პროგრამა, რომელსაც ვიყენებთ?</p>
+<h2 id="_1">სურათები</h2>
+<p>დავიწყოთ ყველაზე პრიმიტიული მაგალითით.</p>
+<h3 id="_2">პიქსელი</h3>
+<p><img alt="" src="https://futureeverythingmsf.files.wordpress.com/2015/02/image.png" /></p>
+<!-- ნ -->
+<p>თითო უჯრას <strong>პიქსელი</strong> ეწოდება. როგორ გავაუმჯობესოთ სურათის ხარისხი?</p>
+<h3 id="-">პიქსელების რაოდენობა - რეზოლუცია</h3>
+<p><img alt="" src="https://kronos-images.schoolmouv.fr/2-fnx-snt-c15-img01.png" /></p>
+<h3 id="_3">ბაიტების რაოდენობა</h3>
+<p>თუ თითო პიქსელი ერთი ბაიტი იქნება, მაშინ 255 ფერს გამოვსახავთ (ნაცრისფერის ტონები) </p>
+<p><img alt="" src="https://seis.bristol.ac.uk/~ggjlb/teaching/ccrs_tutorial/tutorial/graphics/content/pixel.gif" /></p>
+<h3 id="_4">ფერები</h3>
+<p>ციფრულ ფორმატში ფერები გამოისახება <strong>rgb</strong> მნიშვნელობის გამოყენებით. თითო საბაზისო ფერისთვის (წითელი, მწვანე, ლურჯი) გამოყოფილია ერთი ბაიტი - ანუ ერთი პიქსელისთვის სამ ბაიტს ვინახავთ.</p>
+<p><img alt="" src="https://i.pinimg.com/736x/59/57/57/59575781b130706a7d2ce27ebd0e019f.jpg" /></p>
+<!-- n -->
+<p>სურათის პიქსელებად შენახვა ზუსტად შეესაბამება იმ პრინციპს, როგორც ახლა ეს გამოსახულება შენს ეკრანზეა შექმნილი. 
+ყველა ეკრანს აქვს <strong>რეზოლუცია</strong>, მაგალითად, Full HD - 1920x1080. ეს ნიშნავს, რომ ეკრანზე არის 2,073,600 კვადრატი, რომელშიც თავის მხრივ 3-3 მართკუთხედია - ლურჯის, წითელის და მწვანესთვის. rgb მნიშვნელობა სწორედ ასე გამოისახება.</p>
+<h3 id="_5">კომპრესირება</h3>
+<ul>
+<li>ასეთი ენკოდირებით ერთი fhd სურათის ზომა 6,220,800 ბაიტი ანუ 6 MB (მეგაბაიტი) იქნება.</li>
+<li>ზომის შემცირება რაც შეიძლება "ეფექტურად" უნდა მოხდეს</li>
+</ul>
+<!-- n -->
+<p>შეიძლება ცალკე აღებულად არც ისე დიდი ზომაა, მაგრამ ზოგჯერ ამ ზომის შემცირება გვჭირდება (ჩვენ ან სხვას). წარმოიდგინეთ, რამდენი სურათი იპოსტება/იგზავნება სოციალურ მედიაში ყოველ წამს. ისიც გეცოდინებათ, რომ მესენჯერში გაგზავნისას სურათი "ხარისხს კარგავს". 
+სურათის ზომის შემცირება ერთი შეხედვით მარტივი, მაგრამ არც ისე პრიმიტიული პრობლემაა. რა ლოგიკით გადავწყვიტოთ, რომელი პიქსელები ამოვაგდოთ? ჩვენ უბრალოდ ზომის (ანუ ბაიტების რაოდენობის) შემცირება ხომ არ გვინდა - გვსურს ეს ისე გავაკეთოთ, რომ მნიშვნელოვანი ინფორმაცია არ დაიკარგოს. ამ პროცესს კომპრესირება ეწოდება და სურათების შენახვის გარდა ბევრ სხვა ფაილშიც გამოიყენება.</p>
+<h4 id="_6">მაგალითი</h4>
+<p><img alt="" src="https://cdn.geckoandfly.com/wp-content/uploads/2016/12/lossy-compression-ratios.jpg" /></p>
+<!-- ნ -->
+<p>კონკრეტული სიგანის (მაგალითად 2) კვადრატებზე "საშუალოს" აღება და ამ 4 (2x2) პიქსელის მაგივრად 1 მნიშვნელობის ჩაწერა</p>
+<h3 id="_7">სურათის შენახვის ფორმატები</h3>
+<ul>
+<li>jpg</li>
+<li>png</li>
+<li>raw</li>
+</ul>
+<!-- ნ -->
+<p>raw ფორმატი გამოიყენება ფოტოგრაფიაში. კამერის სენსორის ინფორმაცია კომპრესირების გარეშე ინახება, რაც ბევრად დიდი ზომის ფაილს ქმნის, თუმცა დიდი რაოდენობით ინფორმაციას ინახავს რომელსაც კომპრესირება დაკარგავდა - ეს ფოტოს დამუშავების უფრო ხარისხიან საშუალებას გაძლევს (რის შემდეგადაც შეგიძლია გამოაქვეყნო კომპრესირებული).</p>
+<p>კიდევ რა კონტექსტში გაგიგიათ პიქსელების რაოდენობა?</p>
+<h3 id="_8">ციფრული ფოტოს შექმნა</h3>
+<p><img alt="" src="https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc2/galaxy_s7_camera_dual_pixel_t04032016.jpg" /></p>
+<h2 id="_9">ვიდეოები</h2>
+<p>როგორ მიიღება ვიდეო? ბევრი სურათის (frame) სწრაფად (30/60-ჯერ წამში) ჩვენებით (<strong>fps</strong>/frames per second)</p>
+<h3 id="_10">ვიდეოს მოსალოდნელი ზომა</h3>
+<ul>
+<li>ერთი კადრი 6 მეგაბაიტამდეა</li>
+<li>წამში 60 კადრი, 360 მეგაბაიტი</li>
+<li>4 წამი - 1GB ვიდეო</li>
+</ul>
+<!-- n -->
+<p>მოდი უხეშად დავითვალოთ, რამდენი მეგაბაიტი გამოვა ერთ წუთიანი ვიდეო. რადგან ერთი კადრი 6 მეგაბაიტამდეა, ხოლო თითო წამში 60 კადრია, ერთი წამი 360 მეგაბაიტი გამოდის. ზუსტად ოთხი წამი იქნება საჭირო, რომ გეგაბაიტამდე ავიდეთ! ანუ საშუალო 32 გეგაბაიტიანი ტელეფონი ვიდეოს ორ წუთსაც ვერ ჩაიწერს. რა თქმა უნდა ეს ასე არ არის და სხვადასხვა ფორმატის ვიდეოს (mp4, mov...) შენახვისას გამოიყენება სხვადასხვა კომპრესირების ალგორითმები, რომლებიც ვიდეოს ზომას ამცირებს. შეიძლება წამში 60 კადრია, მაგრამ მათი უმრავლესობა მხოლოდ რამდენიმე პიქსელით განსხვავდება ერთმანეთისგან - მოდი, შევინახოთ მხოლოდ ის პიქსელები, რომლებიც შეიცვალა. </p>
+<h3 id="_11">კომპრესირების ალგორითმი</h3>
+<p>ჩაიწერება <strong>პიქსელების რეგიონების</strong> გადაადგილება.</p>
+<p><img alt="" src="https://www.edn.com/wp-content/uploads/media-1067095-mar04fig4motion.gif" /></p>
+<h2 id="_12">ტექსტი</h2>
+<h3 id="ascii">ascii ფორმატი</h3>
+<ul>
+<li>1 ბაიტი</li>
+<li>სხვადასხვა მნიშვნელობა სხვადასხვა ანბანისთვის</li>
+</ul>
+<p><img alt="ascii table" src="https://miro.medium.com/max/3284/1*DHEm7FO7ZATjvH19dmKwoA.png" /></p>
+<!-- n -->
+<p>ascii ფორმატი ძალიან ეკონომიური იყო და სხვა გზა არც ქონდათ - თავდაპირველ კომპიუტერებში მართლა თითოეული ბაიტი ძალიან ძვირი ჯდებოდა. ამიტომ, ეს 255 ციფრი ყველა ქვეყანამ თავისთვის მოირგო - ზოგგან ლათინურ სიმბოლოებს ნიშნავდა, ზოგგან კირილიცას ასოები იყო ჩაწერილი, იაპონელებს თავიანთი იეროგლიფების ენკოდირებაზე მოუხდათ თავის მტვრევა. საბოლოოდ კი ეს ფაილები ბაბილონის გოდოლს გავდა - ერთი ქვეყნის კომპიუტერი ვერაფერს გაუგებდა მეორისას. ამიტომ (ნებაყოფლობით) შეიქმნა  კომისია, რომელიც შეთანხმდა უფრო ფართო - 8 ბაიტიან ფორმატზე, სადაც ყველა ანბანი ჩაეტეოდა.</p>
+<h3 id="utf-8">utf-8 ფორმატი</h3>
+<ul>
+<li>8 ბაიტი</li>
+<li>მოიცავს სხვადასხვა ანბანის სიმბოლოებს</li>
+</ul>
+<h2 id="zip-rar">არქივები (zip, rar)</h2>
+<p>გამოიყენება დირექტორიის ფაილად გადასაქცევად
+<img alt="" src="https://jakewharton.com/static/post-image/zip_layout@2x.png" /></p>
+<!-- ნ -->
+<p>ფაილებზე ოპერაციას აქვს ფიქსირებული დანახარჯი ერთ ფაილზე. მაგალითად, თუ ვაკოპირებთ ათ ცალ 100MB ფაილს, ეს პროცესი უფრო დიდ დროს წაიღებს, ვიდრე ერთი ცალი 1000MB ფაილი. ეს ფიქსირებული დანახარჯები არის, მაგალითად, გადაკოპირების ადგილას იმის შემოწმება, არის თუ არა ფაილისთვის საკმარისი ადგილი. შემდეგ გადაკოპირების ადგილას სპეციალური ცხრილის შეცვლა, რომ იმ ფოლდერში ახალი ფაილი ემატება და ა.შ. ეს დიდი პრობლემა ხდება, როდესაც საქმე ასობით ან ათასობით ფაილს ეხება. გადაწყვეტა არის ფაილების დროებით ერთმანეთზე მიკერება - დაარქივება, თითქოს ერთი ფაილი იყოს. თავდაპირველი განცალკევების დასაბრუნებლად ვაკეთებთ ამოარქივებას.</p>
+<h3 id="_13">ზოგადი კომპრესირება</h3>
+<p><img alt="" src="https://img.favpng.com/11/19/0/run-length-encoding-data-compression-algorithm-lossless-compression-png-favpng-3ePnEaWDhezsnPH0vessmF1UF.jpg" /></p>
+<!-- ნ -->
+<p>არქივების კიდევ ერთ პასუხისმგებლობა არის <strong>ბაიტების</strong> კომპრესირება - იმის ცოდნის გარეშე, თუ რა ფორმატის/ენკოდირების ფაილია. სურათის მაგალითზე ჩანს, რომ ბაიტების რაოდენობა ამ პროცესში რამდენჯერმე მცირდება. <strong>დეკომპრესირებისას</strong> ფაილი უბრუნდება თავდაპირველ ზომას.</p>
+<p>ამ ორივე პროცესის შებრუნებას - ამოარქივებას და დეკომპრესირებას - სჭირდება გამოთვლა და შესაბამისად დრო - ფაილის ყოველ ჯერზე გასახსნელად არ გამოდგება. არქივებს იყენებენ გასაგზავნად, გადასაკოპირებლად ან გრძელვადიანი შენახვისთვის</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6df46069.min.js"></script>
+      
+    
+  </body>
+</html>

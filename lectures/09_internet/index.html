@@ -1,0 +1,1648 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://freeuni-digital-technologies.github.io/22f/lectures/09_internet/">
+      
+      
+        <link rel="prev" href="../05_os_files/">
+      
+      
+        <link rel="next" href="../13_application_components/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11">
+    
+    
+      
+        <title>09. ინტერნეტი - შესავალი ციფრულ ტექნოლოგიებში</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#09" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="შესავალი ციფრულ ტექნოლოგიებში" class="md-header__button md-logo" aria-label="შესავალი ციფრულ ტექნოლოგიებში" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            შესავალი ციფრულ ტექნოლოგიებში
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              09. ინტერნეტი
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.768 3.96v.001l-.002-.005a9.08 9.08 0 0 0-.218-.779c-.13-.394.21-.8.602-.67.29.096.575.205.855.328l.01.005A10.002 10.002 0 0 1 12 22a10.002 10.002 0 0 1-9.162-5.985l-.004-.01a9.722 9.722 0 0 1-.329-.855c-.13-.392.277-.732.67-.602.257.084.517.157.78.218l.004.002A9 9 0 0 0 14.999 6a9.09 9.09 0 0 0-.231-2.04ZM16.5 6c0 5.799-4.701 10.5-10.5 10.5-.426 0-.847-.026-1.26-.075A8.5 8.5 0 1 0 16.425 4.74c.05.413.075.833.075 1.259Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 19a7 7 0 1 1 0-14 7 7 0 0 1 0 14Zm0-1.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 1 0 0 11Zm-5.657.157a.75.75 0 0 1 0 1.06l-1.768 1.768a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.767-1.768a.75.75 0 0 1 1.061 0ZM3.515 3.515a.75.75 0 0 1 1.06 0l1.768 1.768a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L3.515 4.575a.75.75 0 0 1 0-1.06ZM12 0a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 12 0ZM4 12a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 4 12Zm8 8a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0v-2.5A.75.75 0 0 1 12 20Zm12-8a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h2.5A.75.75 0 0 1 24 12Zm-6.343 5.657a.75.75 0 0 1 1.06 0l1.768 1.768a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018l-1.768-1.767a.75.75 0 0 1 0-1.061Zm2.828-14.142a.75.75 0 0 1 0 1.06l-1.768 1.768a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l1.767-1.768a.75.75 0 0 1 1.061 0Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="შესავალი ციფრულ ტექნოლოგიებში" class="md-nav__button md-logo" aria-label="შესავალი ციფრულ ტექნოლოგიებში" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    შესავალი ციფრულ ტექნოლოგიებში
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        მთავარი გვერდი
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_review/" class="md-nav__link">
+        შეჯამება კვირების მიხედვით
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_study_guide/" class="md-nav__link">
+        რჩევები და მითითებები მეცადინეობისთვის
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_bonus_discussion/" class="md-nav__link">
+        📚 ბონუს დისკუსია/პრეზენტაცია
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_project/" class="md-nav__link">
+        🚀 პროექტი
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about_me/" class="md-nav__link">
+        ჩემს შესახებ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Classwork
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Classwork
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/01_karel_setup/" class="md-nav__link">
+        1. შესავალი - codehs და კარელი
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/02_karel_intro/" class="md-nav__link">
+        02. კარელი - პროგრამირების სტრუქტურები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/02_karel_structures/" class="md-nav__link">
+        02. კარელი - სავარჯიშოები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/03_karel_exercises/" class="md-nav__link">
+        03. კარელი - სავარჯიშოები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/04_karel_exercises/" class="md-nav__link">
+        04. კარელის სავარჯიშოები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/05_drawing_structures/" class="md-nav__link">
+        05. ცვლადები, ფუნქციის არგუმენტები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/06_structures/" class="md-nav__link">
+        06. ჯავასკრიპტის სტრუქტურები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/07_lists_objects/" class="md-nav__link">
+        07. სიები და ობიექტები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/10_html_css/" class="md-nav__link">
+        10. html/css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/13_dom_javascript/" class="md-nav__link">
+        13. DOM javascript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classwork/14_dom_javascript/" class="md-nav__link">
+        14. DOM Javascript -  todo list app
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Homework
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Homework
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/00_instructions/" class="md-nav__link">
+        წესები და ატვირთვის ინსტრუქცია
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/01_karel/" class="md-nav__link">
+        დავალება 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/02_karel/" class="md-nav__link">
+        დავალება 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/03_karel/" class="md-nav__link">
+        დავალება 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/04_karel/" class="md-nav__link">
+        დავალება 4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/web_hws/" class="md-nav__link">
+        05. ვების დავალებები (5-8)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Lectures
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Lectures
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_intro/" class="md-nav__link">
+        1. ტექნოლოგიების მნიშვნელობა
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_introduction_to_programming/" class="md-nav__link">
+        02. პრობლემების გადაჭრის პრინციპები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_computers/" class="md-nav__link">
+        03. კომპიუტერის მუშაობის პრინციპები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03b_choosing_specs/" class="md-nav__link">
+        03ბ. რჩევები კომპიუტერის ყიდვისთვის
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_bits_bytes/" class="md-nav__link">
+        04. ინფორმაციის ენკოდირება ბაიტებში
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_os_files/" class="md-nav__link">
+        05 ოპერატიული სისტემა და პროგრამები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          09. ინტერნეტი
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        09. ინტერნეტი
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    შესავალი
+  </a>
+  
+    <nav class="md-nav" aria-label="შესავალი">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ისტორია
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    მოცემულობა და შეზღუდვები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    მთავარი პრინციპები
+  </a>
+  
+    <nav class="md-nav" aria-label="მთავარი პრინციპები">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    ინტერფეისი
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    პროტოკოლი
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    პრობლემები, რომლებიც უნდა გადავჭრათ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    ინტერნეტის შრეები
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-physical-layer" class="md-nav__link">
+    1. Physical layer
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Physical layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    ციფრული და ანალოგური ინფორმაციის პრინციპები
+  </a>
+  
+    <nav class="md-nav" aria-label="ციფრული და ანალოგური ინფორმაციის პრინციპები">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    მაგალითები
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    პასუხისმგებლობა
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    პროტოკოლები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data-link-layer-" class="md-nav__link">
+    2. Data Link layer - ბმული
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Data Link layer - ბმული">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    პასუხისმგებლობები
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-network-layer-" class="md-nav__link">
+    3. Network Layer - ქსელი
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Network Layer - ქსელი">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    პასუხისმგებლობები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    პროტოკოლები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    გზის პოვნა ორ მოწყობილობას შორის
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    რატომ არის საჭირო მესიჯების დაყოფა პაკეტებად?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    ინტერფეისის შეზღუდვები
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. ტრანსპორტი
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ტრანსპორტი">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    პასუხისმგებლობები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    პროტოკოლები
+  </a>
+  
+    <nav class="md-nav" aria-label="პროტოკოლები">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    TCP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    
+  </a>
+  
+    <nav class="md-nav" aria-label="">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    რა შემთხვევებში არის ეს პროცედურა ზედმეტი?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp" class="md-nav__link">
+    UDP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. აპლიკაცია
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_application_components/" class="md-nav__link">
+        13. აპლიკაციების კომპონენტები
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_agile_development_principles/" class="md-nav__link">
+        15. პროგრამების შექმნის პროცესი (agile)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_digital_safety/" class="md-nav__link">
+        15. ციფრული უსაფრთხოება
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    შესავალი
+  </a>
+  
+    <nav class="md-nav" aria-label="შესავალი">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ისტორია
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    მოცემულობა და შეზღუდვები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    მთავარი პრინციპები
+  </a>
+  
+    <nav class="md-nav" aria-label="მთავარი პრინციპები">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    ინტერფეისი
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    პროტოკოლი
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    პრობლემები, რომლებიც უნდა გადავჭრათ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    ინტერნეტის შრეები
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-physical-layer" class="md-nav__link">
+    1. Physical layer
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Physical layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    ციფრული და ანალოგური ინფორმაციის პრინციპები
+  </a>
+  
+    <nav class="md-nav" aria-label="ციფრული და ანალოგური ინფორმაციის პრინციპები">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    მაგალითები
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    პასუხისმგებლობა
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    პროტოკოლები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-data-link-layer-" class="md-nav__link">
+    2. Data Link layer - ბმული
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Data Link layer - ბმული">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    პასუხისმგებლობები
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-network-layer-" class="md-nav__link">
+    3. Network Layer - ქსელი
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Network Layer - ქსელი">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    პასუხისმგებლობები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    პროტოკოლები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    გზის პოვნა ორ მოწყობილობას შორის
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    რატომ არის საჭირო მესიჯების დაყოფა პაკეტებად?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    ინტერფეისის შეზღუდვები
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. ტრანსპორტი
+  </a>
+  
+    <nav class="md-nav" aria-label="4. ტრანსპორტი">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    პასუხისმგებლობები
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    პროტოკოლები
+  </a>
+  
+    <nav class="md-nav" aria-label="პროტოკოლები">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    TCP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    
+  </a>
+  
+    <nav class="md-nav" aria-label="">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    რა შემთხვევებში არის ეს პროცედურა ზედმეტი?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp" class="md-nav__link">
+    UDP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. აპლიკაცია
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="09">09. ინტერნეტი</h1>
+<h2 id="_1">შესავალი</h2>
+<h3 id="_2">ისტორია</h3>
+<p>1969 წელს UCLA-ის სტუდენტი ARPANET-ის ქსელში სტენფორდს <a href="https://thisdayintechhistory.com/10/29/first-message-on-the-internet/">დაუკავშირდა</a>.და მეორე ცდაზე მესიჯი "login" გააგზავნა. </p>
+<!-- n -->
+<p>(რამდენი ბაიტი იქნებოდა ეს მესიჯი?)</p>
+<p>ARPANET არის პირველი კომპიუტერული ქსელი. ამ დროს მასში ოთხი უნივერსიტეტის კომპიუტერი იყო ჩართული.
+დაკავშირების შემდეგ შეეცადა სისტემაში შესულიყო, და login-ბრძანების აკრეფვისას სტენფორდის სისტემა 'დაიქრაშა'. დაახლოებით ერთ საათში მიმღები კომპიუტერის პარამეტრების შეცვლის შემდეგ მცდელობა წარმატებით დასრულდა. სურათზე ხედავთ მიმღები კომპიუტერის მსგავს მოდელს. </p>
+<h3 id="_3"></h3>
+<p><img alt="" src="https://hsto.org/storage2/7cf/8c3/fce/7cf8c3fcef1b5abf6d8250cf1d000ff1.jpg" /> </p>
+<h3 id="_4">მოცემულობა და შეზღუდვები</h3>
+<p>4 ცალი კომპიუტერიდან 50 მილიარდამდე:</p>
+<ul>
+<li>დღეში 8 ბაიტიდან <a href="https://www.internetlivestats.com/one-second/">წამში 100 000</a> გეგაბაიტამდე</li>
+<li>100 000 000 000 000-ჯერ მეტი</li>
+</ul>
+<!-- n -->
+<p>ანუ დღეს ერთ წამში ას ტრილიონჯერ მეტი მონაცემები გაიგზავნა, ვიდრე ინტერნეტის პირველ დღეს. დღის რიცხვს ჩვენი ტვინი კიდევ უფრო ვერ აღიქვამს (ასევე მაგდენ ნოლიანს რა ქვია, ვერ ვიხსენებ). დღეში კი კიდევ 60x60x24=86,400-ჯერ უფრო მეტი.</p>
+<p>ერთი ინტერნეტ პაკეტი პლანეტის ერთი ბოლოდან მეორემდე 10-20 კომპიუტერს გაივლის და ამას 0.1 მილიწამსაც კი არ ანდომებს</p>
+<p>და მნიშვნელოვანია ისიც, რომ ამ ყველა კომპიუტერს შორის სხვადასხვა კავშირია. ჯერ wifi-თ უკავშირდები შენს როუტერს, რომელიც სახლში დგას. როუტერი უკავშირდება მოდემს, რომელიც ანაწილებს ინტერნეტ კავშირს შენობაში. შეიძლება ქუჩაზე ჯერ ოპტიკური კაბელი არ არის, ანუ რაღაც მომენტში გადაერთვება ერთიდან მეორეზე. თუ ოკეანის გადაღმა გზავნით, თითქმის მთელი ევროპის პაკეტებთან ერთად იგზავნება უზარმაზარი ტრანს ატლანტიკური კაბელით.</p>
+<h3 id="_5"></h3>
+<p><img alt="" src="https://mocomi.com/wp-content/uploads/2016/10/MOC_GIFO_INTERNET.gif" /></p>
+<h3 id="_6">მთავარი პრინციპები</h3>
+<!-- n -->
+<p>როგორ არის შესაძლებელი, რომ ინტერნეტი ასეთი მასშტაბური, მრავალფეროვანი და სწრაფი იყოს? და უფრო მეტიც, ნახევარი საუკუნის წინ შექმნილი მოდელს დღეს მილიარდობით მოწყობილობა უპრობლემოდ იყენებდეს? მთავარი მიზეზი ის არის, რომ ინტერნეტისთვის საჭირო ფუნქციები დაყოფილია ერთმანეთისგან მკაცრად იზოლირებულ შრეებად, ისე, რომ სხვადასხვა პრობლემების გადაჭრებმა ერთმანეთს ხელი არ შეუშალონ/არ შეზღუდონ. ამ შრეების გაცნობის შემდეგ უკეთ გაიგებთ რაზე ვსაუბრობ. ნებისმიერი დიდი და რთული სისტემის შექმნისას აუცილებელია შემადგენელი ელემენტები რაც შეიძლება მინიმალისტური იყოს. ეს სტრატეგია ხშირად გამოიყენება კომპიუტერულ მეცნიერებებში (გაიხსენეთ დეკომპოზიცია). </p>
+<p>თითოეულ შრეს აქვს ორი მთავარი კომპონენტი</p>
+<h4 id="_7">ინტერფეისი</h4>
+<!-- n -->
+<p>პასუხისმგებლობა, რომლის შესრულებასაც პირდება შრე (ან სერვისი, ფუნქცია). ინტერფეისი პასუხობს კითხვას <strong>რა</strong> და არა <strong>როგორ</strong>. ინტერფეისს სრული თავისუფლება აქვს, როგორც უნდა ისე შეასრულოს ნაკისრები ვალდებულება. განსაზღვრული (რასაც უნდა დაემორჩილოს) არის მხოლოდ მოცემულობა და შედეგი. რაც უფრო პატარა და კარგად განსაზღვრულია პასუხისმგებლობა, უფრო მეტ სხვადასხვა პრობლემაზე შეგვიძლია გამოვიყენოთ ეს სერვისი. </p>
+<h4 id="_8">პროტოკოლი</h4>
+<!-- n -->
+
+<p>წინასწარ შეთანხმებული პრინციპები, რომლითაც ერთი შრის ორი სუბიექტი ერთმანეთს უკავშირდება. მაგალითად, იმისთვის, რომ wifi კავშირი გვგქონდეს, გვჭირდება wifi სიგნალის გამცემი და ჩვენს კომპიუტერზე ან ტელეფონზე მისი მიმღები. Wifi-ს bluetooth-ით ვერ დავუკავშირდებით. მიუხედავად იმისა, რომ ეს ორი პროტოკოლი ერთი და იმავე პასუხისმგებლობას ასრულებს (მონაცემთა გადაცემა ერთი მოწყობილობიდან მეორეში), მათ ერთმანეთის არ ესმით.</p>
+<h3 id="_9">პრობლემები, რომლებიც უნდა გადავჭრათ</h3>
+<!-- n -->
+<p>ლექციის ბოლოს, მნიშვნელოვანია იცოდეთ ინტერნეტის რომელი შრე არის პასუხისმგებელი თითოეული საკითხების მოგვარებაზე:</p>
+<ol>
+<li>გავგზავნოთ ბიტები და ბაიტები ანალოგი სიგნალით</li>
+<li>გავიგოთ ყველაზე მოკლე გზა ერთი კომპიუტერიდან მეორემდე</li>
+<li>დავშალოთ მესიჯი ინტერნეტ პაკეტებად და სწორი თანმიმდევრობით ავაწყოთ</li>
+<li>მივანიჭოთ მოწყობილობებს მისამართი</li>
+<li>გამოვიყენოთ bandwidth</li>
+<li>სხვადასხვა მედიუმის/პროვაიდერის გამოყენება კავშირისთვის</li>
+<li>დაკარგული პაკეტების პოვნა/აღდგენა</li>
+<li>კავშირის დაზიანების პოვნა/აღდგენა</li>
+</ol>
+<h2 id="_10">ინტერნეტის შრეები</h2>
+<h2 id="1-physical-layer">1. Physical layer</h2>
+<h3 id="_11">ციფრული და ანალოგური ინფორმაციის პრინციპები</h3>
+<ul>
+<li>ანალოგი - ის, რაც ფიზიკურად არსებობს</li>
+<li>ციფრული - რიცხვებში კონვერტირებული ანალოგი</li>
+</ul>
+<p>მათ დასაკავშირებლად გვჭირდება მოწყობილობა, რომელიც <strong>დააკონვერტირებს</strong> ინფორმაციას.</p>
+<!-- n -->
+<h4 id="_12">მაგალითები</h4>
+<p><img alt="" src="http://1.bp.blogspot.com/-TkaDbm2JApk/Tjifggo43mI/AAAAAAAACdk/Zjnrmbuz_M8/s400/image009.jpg" /></p>
+<ul>
+<li>სურათის გადაღება ფირზე ანალოგი ოპერაციაა, დასკანერებისას ვაკეთებთ კონვერტირებას png-ში</li>
+<li>ოპტიკურ კაბელში 1 და 0-ების გაგზავნა ხდება სინათლის სიმძლავრით. მაღალი სინათლე - 1, დაბალი - 0</li>
+<li>აუდიოს ვინილზე ჩაწერა ანალოგი ოპერაციაა, ხოლო მიკროფონით ბიტებად და ბაიტებად გარდაქმნისთვის გვჭირდება მოწყობილობა, რომელიც გადააკონვერტირებს ტალღას რიცხვებში</li>
+<li>wifi სიგნალი არის ფიზიკური ტალღა, wifi card კი აკონვერტირებს რიცხვსა და ტალღას შორის</li>
+</ul>
+<!-- n -->
+<h3 id="_13">პასუხისმგებლობა</h3>
+<p>ფიზიკური შრის მოვალეობაა ციფრული სიგნალის ანალოგურში (და პირიქით) გადათარგმნა</p>
+<p>ჩიპის გამოყენებით მიღებული ინფორმაციის წაკითხვა/ჩაწერა ისევე შეიძლება, როგორც მეხსიერებიდან - უბრალოდ 1 და 0-ების მიმდევრობას ვიღებთ.</p>
+<!-- n -->
+
+<h3 id="_14"></h3>
+<p><img alt="" src="https://www.researchgate.net/publication/309595949/figure/fig2/AS:424332557066241@1478180173228/Digital-to-analog-modulation-14.png" /></p>
+<h3 id="_15">პროტოკოლები</h3>
+<ul>
+<li>dsl</li>
+<li>Bluetooth</li>
+<li>ethernet/wifi</li>
+<li>usb</li>
+<li>infra red</li>
+</ul>
+<!-- n -->
+<p>usb განსაკუთრებით მძლავრი პროტოკოლია, დააკვირდით რამდენი სრულიად განსხვავებული მოწყობილობა იყენებს - პორტატული დრაივი, პრინტერი, MIDI.</p>
+<h3 id="_16"></h3>
+<p><img alt="" src="https://cdn-reichelt.de/bilder/web/xxl_ws/E910/DLINK_DGE528T.png" /></p>
+<!-- n -->
+<p>ერთი პროტოკოლით ორ მოწყობილობას შორის კავშირისთვის აუცილებელია <strong>ორივე</strong> მოწყობილობას ქონდეს adc/dac (analog to digital/digital to analog) ბარათი. მაგალითად, თუ ლეპტოპს wifi ბარათი არ აქვს, wifi ქსელში ვერ ჩავერთვებით. თუ router-ს wifi ფუნქცია არ აქვს (და მხოლოდ შნურის შესაერთებელი აქვს), ლეპტოპზე wifi-თ ვერ დავუკავშირდებით, მხოლოდ შნურით</p>
+<h2 id="2-data-link-layer-">2. Data Link layer - ბმული</h2>
+<p>თუ გვჭირდება 50 მილიარდი კომპიუტერი დავაკავშიროთ, პირველი, რასაც უნდა შევაცადოთ, არის 2 კომპიუტერის დაკავშირება.</p>
+<h3 id="_17">პასუხისმგებლობები</h3>
+<ul>
+<li>ფიზიკურ შრეზე დაკავშირებულ ორ მოწყობილობას შორის ინფორმაციის მიმოცვლა</li>
+<li>ფიზიკურ შრეზე დაკარგული ინფორმაციის აღმოჩენა/კორექტირება</li>
+<li>ინფორმაციის დასაწყისის და დასასრულის მონიშვნა (რომ უწყვეტად მიდიოდეს კავშირი). რამდენიმე სხვადასხვა გზავნილის დაჯგუფება (და შემდეგ განცალკევება), რომ ფიზიკური კავშირი მაქსიმალური ეფექტურობით იყოს გამოყენებული. </li>
+</ul>
+<!-- ### Error Control
+ფიზიკურ შრეზე დაშვებული შეცდომების გამოსწორება იმის გათვალისწინებით, თუ რომელი პროტოკოლი გამოიყენება ფიზიკურ შრეზე. wifi ტალღები ბევრად უფრო მარტივად დაზიანებადია (შესაბამისად მესიჯის ნაწილები იკარგება გზაში), ვიდრე კაბელში გამავალი ნაკადი. მათემატიკურად შესაძლებელია გადაცემისას დაფიქსირებული შეცდომების პოვნა და გამოსწორება, თუმცა ამისთვის საჭიროა მესიჯისთვის დამატებითი ინფორმაციის დართვა (იმის მიხედვით, რამდენად დიდ დაზიანებასთან გამკლავება გვსურს). თუ კავშირი სანდოა (შნური), უაზროდ გამოვიყენებდით ამ ალგორითმებს და გავზრდიდით ყველა მესიჯის ზომას.
+
+
+A simple example of how this works using metadata is transmitting the word "HELLO", by encoding each letter as its position in the alphabet. Thus, the letter A is coded as 1, B as 2, and so on as shown in the table on the right. Adding up the resulting numbers yields 8 + 5 + 12 + 12 + 15 = 52, and 5 + 2 = 7 calculates the metadata. Finally, the "8 5 12 12 15 7" numbers sequence is transmitted, which the receiver will see on its end if there are no transmission errors. The receiver knows that the last number received is the error-detecting metadata and that all data before is the message, so the receiver can recalculate the above math and if the metadata matches it can be concluded that the data has been received error-free. Though, if the receiver sees something like a "7 5 12 12 15 7" sequence (first element altered by some error), it can run the check by calculating 7 + 5 + 12 + 12 + 15 = 51 and 5 + 1 = 6, and discard the received data as defective since 6 does not equal 7.
+-->
+
+<h2 id="3-network-layer-">3. Network Layer - ქსელი</h2>
+<!-- n -->
+
+<p>რადგანაც ფიზიკური კავშირის პრობლემა მოგვარებულია, შეგვიძლია დავივიწყოთ, ქსელში რომელი ორი წყვილი რა გზითაა დაკავშირებული. აქ უბრალოდ იმაზე უნდა ვიფიქროთ, ყველაზე სწრაფი გზით როგორ მოვაგვაროთ ჩამოთვლილი პრობლემები. </p>
+<h3 id="_18"></h3>
+<p><img alt="" src="https://i.gifer.com/L6dm.gif" /></p>
+<h3 id="_19">პასუხისმგებლობები</h3>
+<ul>
+<li>ქსელის ორ წერტილს (კომპიუტერს) შორის ყველაზე მოკლე (სწრაფი) გზის პოვნა</li>
+<li>ქსელის დატვირთვის გადანაწილება </li>
+</ul>
+<h3 id="_20">პროტოკოლები</h3>
+<p>მხოლოდ ერთი - IP</p>
+<!-- n -->
+<p>აქამდე განხილული შრეები მხოლოდ ორი კომპიუტერის დაკავშირებას ეხება. ქსელში ბევრი კომპიუტერი შედის და ერთმა მესიჯმა რამდენიმე მათგანი უნდა გაიაროს. ამისთვის მნიშნველოვანია, რომ ყველამ იცოდეს სად გადააგზავნოს მესიჯი. ამიტომ ინტერნეტში ქსელის ერთი პროტოკოლი არსებობს - IP მისამართი, უნიკალური იდენთიფიკატორი, რომელიც ქსელში ჩართულ ყველა კომპიუტერს აქვს. </p>
+<h3 id="_21">გზის პოვნა ორ მოწყობილობას შორის</h3>
+<!-- n -->
+<p>ყველაზე მნიშვნელოვანი გზის გამოთვლაა. ყველა გადამრთველმა რომ ყველა დანარჩენთან გზა გამოთვალოს და დაიმახსოვროს, ორ პრობლემას წააწყდება:</p>
+<h3 id="_22"></h3>
+<ul>
+<li>არ ეყოფა დრო და ადგილი მეხსიერებაში </li>
+<li>ეს გზა ყოველ წამს იცვლება და ასეულობით წელი რომც არ ჭირდებოდეს ამ გამოთვლას, ერთ წამში უკვე უსარგებლო იქნებოდა. </li>
+</ul>
+<!-- n -->
+
+<p>ამიტომ იმის მაგივრად, რომ მთლიანი გზა დაიმახსოვრონ, ინტერნეტში თითოეულ გადამრთველს აქვს ცხრილი სხვა მისამართების და იმახსოვრებს მხოლოდ შემდეგ გაჩერებას ამ მისამართის (ან მისამართების ჯგუფის გზაზე). დაფიქრდი, ერთი ქალაქიდან მეორეში ქალაქში კონკრეტულ მისამართზე რომ მიდიოდე. გაგიჭირდება ვინმეს პოვნა, ვინც მთლიანი გზა დეტალურად იცის. ეს გადამრთველები ასევე პერიოდულად ამოწმებენ, რამდენად გადატვირთული არიან მათი მეზობლები და მხოლოდ ახლო გარემოზე დაკვირვების გზით ცდილობენ პაკეტთა ნაკადის განაწილებას.</p>
+<h3 id="_23"></h3>
+<p><img alt="" src="https://www.researchgate.net/publication/324776867/figure/fig2/AS:619665818656777@1524751252557/An-example-of-routing-tables-in-a-storing-mode.png" /> </p>
+<!-- n -->
+<p>ზემოთა სურათის ცოდნა არაა სავალდებულო</p>
+<h3 id="_24">რატომ არის საჭირო მესიჯების დაყოფა პაკეტებად?</h3>
+<!-- n -->
+<p>რაც შეეხება გზავნილის ზომას, დიდი გზავნილის პატარებად დაყოფა ნიშნავს, რომ ქსელში სხვადასხვა გზით შეძლებენ წასვლას და უფრო მალე მივა ყველა ერთად, ვიდრე ერთი მეორის დალოდებისას. კიდევ რამდენიმე სხვა მიზეზის გამო, ინტერნეტ პაკეტები საკმაოდ მცირეა და მესიჯების დიდი (მაგრამ არა ყველა) ნაწილი უნდა დაიშალოს და მიღებისას აიწყოს.</p>
+<h3 id="_25">ინტერფეისის შეზღუდვები</h3>
+<p>დაკარგული პაკეტების თავიდან გაგზავნა ორი მიზეზის გამო არ გვაწყობს:
+1. მეხსიერება
+2. დრო</p>
+<!-- n -->
+
+<p>ძალიან დიდი მეხსიერება დაჭირდება რამდენიმე მილიარდ გადამრთველს, რომ გამავალი პაკეტები შეინახონ. ასევე, დიდი ზომის მონაცემთა დისკზე შესანახად ჩაწერა/წაშლა წამში ასჯერ არც ისე სწრაფია.</p>
+<p>ყველა გადართვა ორჯერ უფრო მეტ ხანს გაგრძელდება, რადგან შეფერხება იქნება დასტურის მოლოდინში. ამის გამო, ეს პრობლემა შემდეგი შრის მოსაგვარებელია.</p>
+<h2 id="4">4. ტრანსპორტი</h2>
+<h3 id="_26">პასუხისმგებლობები</h3>
+<ul>
+<li>პაკეტების დანომვრა, აწყობა</li>
+<li>დაკარგული პაკეტების აღმოჩენა და თავიდან გაგზავნა</li>
+</ul>
+<p>ამ პრობლემის მოგვარების ორი მთავარი გზა (პროტოკოლი) არსებობს:</p>
+<h3 id="_27">პროტოკოლები</h3>
+<h4 id="tcp">TCP</h4>
+<ul>
+<li>ინფორმაციის მიმოცვლამდე კომპიუტერები ამოწმებენ კავშირს (3 way handshake)</li>
+<li>თითოეული ინტერნეტ პაკეტის გაგზავნის შემდეგ ელოდები დასტურს (ასევე ინტერნეტ პაკეტად გამოგზავნილ მესიჯს). </li>
+</ul>
+<p><img alt="" src="https://www.researchgate.net/profile/Roberto-Bifulco-2/publication/305081696/figure/fig2/AS:643173193879554@1530355847765/3-way-handshake-3-way-handshake-and-Proxy-Early-SYN-Forwarding.png" /></p>
+<h3 id="_28"></h3>
+<p><img alt="" src="https://i.stack.imgur.com/fVsBQ.png" /></p>
+<h5 id="_29">რა შემთხვევებში არის ეს პროცედურა ზედმეტი?</h5>
+<ul>
+<li>ვიდეო ზარი - 2 წამის წინანდელი ნათქვამი რაში გვჭირდება?</li>
+</ul>
+<p>კავშირის და ყოველი პაკეტის დასტურის გზავნა და ლოდინი დროის მხრივ ძვირი ოპერაციებია და ყოველთვის არ ღირს.</p>
+<h4 id="udp">UDP</h4>
+<p>ინტერნეტ პაკეტს აგზავნი და წარმატებებს უსურვებ :)</p>
+<p>თუ არ ვამოწმებთ მივიდა თუ არა, აბა საიდან იგებენ აპლიკაციები, რომ ცუდი კავშირი გვაქვს?</p>
+<h2 id="5">5. აპლიკაცია</h2>
+<p>კომპიუტერულ პროგრამებს ახლა ისღა დარჩენიათ, გადაწყვიტონ რომელი პროტოკოლი უნდათ - tcp თუ udp და როგორმე გაიგონ მესიჯის მიმღების IP მისამართი. სხვა ყველაფერი მათი საზრუნავი აღარაა.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6df46069.min.js"></script>
+      
+    
+  </body>
+</html>
